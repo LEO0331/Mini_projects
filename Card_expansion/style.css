@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+.container{
+    display: flex; /*horizontal*/
+    width: 90vw; /*viewport width 90%*/
+}
+
+.panel{
+    background-size: cover; /*auto 100%*/
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 30px;
+    color: ivory;
+    cursor: pointer;
+    margin: 5px;
+    flex: 0.5; /*initial value, even size: active will change this value*/
+    position: relative; /*relative panel*/
+    transition: flex 0.5s ease-in;
+}
+
+.panel h2{
+    font-size: 28px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0; /*invisible*/
+}
+
+.panel.active {
+    flex: 5; /*0.5 to 5*/
+}
+  
+.panel.active h2 {
+    opacity: 1;
+    transition: opacity 0.2s ease-in 0.3s; /*delay*/
+}
+  
+@media (max-width: 480px) { /*see only 3 images in small screen, under 480px*/
+    .container {
+      width: 100vw;
+    }
+    /*remove last two panel*/
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+      display: none;
+    }
+}
+  
