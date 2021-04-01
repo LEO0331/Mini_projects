@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+/*
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+    background-color: rgb(229, 240, 240);
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container { /*number style*/
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 400px; 
+}
+
+.progress-container::before {
+    content: ''; /*add content when using before/after*/
+    background-color: rgb(207, 207, 207); /*line grey; var(--line-border-empty)*/
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 100%; /*represent empty line*/
+    z-index: -1;
+}
+
+.progress { /*line style*/
+    background-color: rgb(26, 83, 83); /*change line color; var(--line-border-fill)*/
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 0%; /*will fill in the line*/
+    z-index: -1; /*behind the circle*/
+    transition: 0.3s ease; /*line transition after click*/
+}
+
+.circle {
+    background-color: white;
+    color: grey;
+    border-radius: 50%; /*rounded*/
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(207, 207, 207);
+    transition: 0.3s ease;
+}
+  
+.circle.active {
+    border-color: rgb(26, 83, 83);
+}
+  
+.btn {
+    background-color: rgb(26, 83, 83);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 35px;
+    margin: 6px;
+    font-size: 16px;
+}
+/*states*/
+.btn:active {
+    transform: scale(0.97); /*click effect, a link becomes active when you click on it*/
+}
+  
+.btn:focus { /*focus selector*/
+    outline: 0;
+}
+  
+.btn:disabled {
+    background-color: rgb(207, 207, 207);
+    cursor: not-allowed;
+}
