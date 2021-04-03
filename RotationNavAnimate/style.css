@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    color: black;
+    overflow-x: hidden; /*scrollbars*/
+}
+
+.container {
+    background-color: #e0e0e0;
+    transform-origin: top left;/*set up rotation point, default: middle*/
+    transition: transform 0.3s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+}
+  
+.container.show-nav {
+    transform: rotate(-15deg);
+}
+  
+.circle-container {
+    position: fixed;/*https://www.wibibi.com/info.php?tid=156*/
+    top: -100px;
+    left: -100px;
+}
+  
+.circle {
+    background-color: #464646;
+    height: 200px;/*depend on circle-container top right */
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.3s linear;
+}
+  
+.container.show-nav .circle {
+    transform: rotate(-80deg);
+}
+  
+.circle button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+  
+.circle button:focus {
+    outline: none;
+}
+  
+.circle button#open {
+    left: 60%;
+}
+  
+.circle button#close {
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+  
+.container.show-nav + nav li {
+    transform: translateX(0);/*view the nav bar*/
+    transition-delay: 0.2s;
+}
+  
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+  
+nav ul {
+    list-style-type: none;/*no bullet points*/
+    padding-left: 25px;
+}
+  
+nav ul li {
+    text-transform: uppercase;
+    color: white;
+    margin: 40px 0;
+    transform: translateX(-100%);/*left*/
+    transition: transform 0.3s ease-in;
+}
+  
+nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+  
+nav ul li + li {
+    margin-left: 10px;
+    transform: translateX(-150%);
+}
+  
+nav ul li + li + li {
+    margin-left: 20px;
+    transform: translateX(-200%);
+}
+  
+.content img {
+    max-width: 100%;
+}
+  
+.content {
+    max-width: 1000px;
+    margin: 45px auto;
+}
+  
+.content h1 {
+    margin: 0;
+}
+  
+.content small {
+    color: rgb(48, 48, 48);
+    font-style: italic;
+}
+  
+.content p {
+    color: rgb(26, 26, 26);
+    line-height: 1.5;
+}
