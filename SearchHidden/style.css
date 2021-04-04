@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: linear-gradient(90deg, rgb(63, 100, 94), rgb(29, 178, 223));
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+.container{
+    position: relative;
+    height: 60px;
+}
+
+.container .input {
+    background-color: white;
+    border: 0;
+    font-size: 20px;
+    padding: 16px;
+    height: 60px;
+    width: 60px;
+    transition: width 0.2s ease; /*will expand after transition*/
+}
+  
+.btn {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 26px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 60px;/*icon in the middle*/
+    transition: transform 0.2s ease;
+}
+  
+.btn:focus, .input:focus {
+    outline: 0;
+}
+  
+.container.active .input {
+    width: 250px;/*60->250*/
+}
+  
+.container.active .btn {
+    transform: translateX(230px);
+}
