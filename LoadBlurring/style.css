@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+.bg {
+    background: url('https://images.unsplash.com/photo-1617375112754-3b599e496376?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
+      no-repeat center center/cover;
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: calc(100vw + 65px);
+    height: calc(100vh + 65px);
+    z-index: -1;/*behind percentage*/
+    filter: blur(0px);
+}
+  
+.txt {
+    font-size: 70px;
+    color: white;
+}
