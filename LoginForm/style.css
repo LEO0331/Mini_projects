@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(34, 117, 212);
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 25px 35px;
+    border-radius: 10px;
+}
+  
+h1 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+  
+a {
+    text-decoration: none;
+    color: rgb(178, 215, 228);
+}
+  
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: rgb(178, 215, 228);
+    padding: 16px;
+    font-family: inherit;
+    font-size: 20px;
+    border: 0;
+    border-radius: 7px;
+}
+  
+.btn:focus {
+    outline: 0;
+}
+  
+.btn:active {
+    transform: scale(0.97);
+}
+  
+.text {
+    margin-top: 25px;
+}
+  
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 350px;
+}
+  
+.form-control input {/*white line*/
+    background-color: transparent;
+    border: 0;
+    border-bottom: 3px white solid;
+    display: block;
+    width: 100%;
+    padding: 25px 0;
+    font-size: 18px;
+    color: white;
+}
+  
+.form-control input:focus, .form-control input:valid {/*get rid of border*/
+    outline: 0;
+    border-bottom-color: rgb(178, 215, 228);
+}
+  
+.form-control label {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    pointer-events: none;
+}
+  
+.form-control label span {
+    display: inline-block;
+    font-size: 20px;
+    min-width: 5px;
+    transition: 0.2s cubic-bezier(0.78, -0.65, 0.255, 1.65);/*flip with bounce effect*/
+}
+  
+.form-control input:focus + label span, .form-control input:valid + label span {
+    color: rgb(178, 215, 228);
+    transform: translateY(-30px);/*negative: move up*/
+}
