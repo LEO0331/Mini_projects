@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(148, 174, 207);
+    margin: 0;
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;/*hide horizontal scroll bar*/
+}
+
+h1 {
+    margin: 15px;
+}
+  
+.box {
+    background-color: rgb(70, 72, 180);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 150px;
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 4px 5px rgba(32, 32, 32, 0.158);
+    transform: translateX(500%);/*move along X-axis, off screen*/
+    transition: transform 0.3s ease;
+}
+  
+.box:nth-of-type(even) {/*selector, come in different directions*/
+    transform: translateX(-500%);
+}
+  
+.box.active {/*show the box*/
+    transform: translateX(0);/*default*/
+}
+  
+h2 {
+    font-size: 30px;
+}
