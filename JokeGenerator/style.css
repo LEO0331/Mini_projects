@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(82, 139, 212);
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+.container {
+    background-color: rgb(223, 219, 219);
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.192), 0 7px 7px rgba(0, 0, 0, 0.178);
+    padding: 60px 30px;
+    text-align: center;
+    width: 80vw;
+}
+  
+h1 {
+    margin: 0;
+    opacity: 0.6;
+    letter-spacing: 3px;
+}
+  
+.joke {
+    font-size: 35px;
+    letter-spacing: 1.5px;
+    line-height: 45px;
+    margin: 55px auto;
+    max-width: 500px;
+}
+  
+.btn {
+    background-color: #3d3bd1;
+    color: white;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.158), 0 8px 8px rgba(0, 0, 0, 0.205);
+    padding: 16px 45px;
+    font-size: 18px;
+    cursor: pointer;
+}
+  
+.btn:active {
+    transform: scale(0.97);
+}
+  
+.btn:focus {
+    outline: none;/*0, no outline when click*/
+}
+
+@media (max-width: 480px) { 
+    .container {
+        width: 100vw;
+    }
+}
