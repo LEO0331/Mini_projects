@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --border-color: #0c49c5;
+    --fill-color: #5ea1e0;
+}
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1a6eb3;
+    color: white;
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin: 5px 0 0;
+}
+  
+h3 {
+    font-weight: 300;
+    margin: 5px 0;
+}
+  
+.cup {
+    background-color: white;
+    border: 3px solid var(--border-color);
+    color: var(--border-color);
+    border-radius: 0 0 30px 30px;
+    height: 300px;
+    width: 150px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+  
+.cup.cup-small {
+    height: 95px;
+    width: 50px;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba(255, 255, 255, 0.911);
+    cursor: pointer;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 6px;
+    transition: 0.2s ease;
+}
+  
+.cup.cup-small.full {
+    background-color: var(--fill-color);
+    color: white;
+}
+  
+.cups {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+}
+  
+.remained {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    transition: 0.2s ease;
+}
+  
+.remained span {
+    font-size: 18px;
+    font-weight: bold;
+}
+  
+.remained small {
+    font-size: 12px;
+}
+  
+.percentage {
+    background-color: var(--fill-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 28px;
+    height: 0;
+    transition: 0.2s ease;
+}
+  
+.text {
+    text-align: center;
+    margin: 0 0 6px;
+}
+  
