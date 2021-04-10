@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+}
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+  
+html {
+    transition: all 0.4s ease-in;
+}
+  
+html.dark {
+    --primary-color: white;
+    --secondary-color: black;
+}
+  
+html.dark {
+    background-color: rgb(29, 29, 29);
+    color: var(--primary-color);
+}
+  
+.toggle {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 14px;
+    position: absolute;
+    top: 100px;
+}
+  
+.toggle:focus {
+    outline: none;
+}
+
+.toggle:active {
+    transform: scale(0.95);
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+  
+.needle {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 60px;
+    width: 4px;
+    transform-origin: bottom center;/*rotate from the bottom center*/
+    transition: all 0.3s ease-in;
+}
+  
+.needle.hour {/*move needle to middle of the container*/
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+  
+.needle.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 90px;
+}
+  
+.needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 90px;
+    background-color: #dd3f2d;
+}
+  
+.center-point {
+    background-color: #dd3f2d;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);/*middle*/
+    border-radius: 50%;
+}
+  
+.center-point::after {/*black dot in the middle of center point*/
+    content: '';/*must add when use before/after*/
+    background-color: var(--primary-color);
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+  
+.time {
+    font-size: 50px;
+}
+  
+.date {
+    color: rgb(114, 114, 114);
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+  
+.date .circle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 20px;
+    transition: all 0.4s ease-in;
+    font-size: 14px;
+}
