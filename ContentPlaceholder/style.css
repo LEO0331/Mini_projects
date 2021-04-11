@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #d4d7d8;
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+img {
+    max-width: 100%;
+}
+  
+.card {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    width: 400px;
+}
+  
+.card-header {
+    height: 200px;
+}
+  
+.card-header img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+  
+.card-content {
+    background-color: white;
+    padding: 25px;
+}
+  
+.card-title {
+    height: 25px;
+    margin: 0;
+}
+  
+.card-excerpt {
+    color: rgb(102, 102, 102);
+    margin: 5px 0 15px;
+}
+  
+.author {
+    display: flex;
+}
+  
+.profile-img {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 45px;
+    width: 45px;
+}
+  
+.author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 15px;
+    width: 90px;
+}
+  
+.author-info small {
+    color: rgb(136, 136, 136);
+    margin-top: 6px;
+}
+  
+.animated-bg {
+    background-image: linear-gradient(to right,
+      #f1ebeb 0%,
+      #e4e6ec 10%,
+      #dfe4e7 20%,
+      #e3e6e9 100%
+    );
+    background-size: 200% 100%;
+    animation: bgPos 0.8s linear infinite;
+}
+  
+.animated-bg-text {
+    border-radius: 45px;
+    display: inline-block;
+    margin: 0;
+    height: 15px;
+    width: 100%;
+}
+/*The animation is created by gradually changing from one set of CSS styles to another*/ 
+@keyframes bgPos {
+    0% {/*from-to: change position at X-axis*/
+        background-position: 50% 0;
+    }
+    100% {
+        background-position: -150% 0;
+    }
+}
+  
