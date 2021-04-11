@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    background-color: #1b3147;
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+.kinetic {
+    position: relative;
+    height: 70px;
+    width: 70px;
+}
+  
+.kinetic::after, .kinetic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 40px solid transparent;
+    border-bottom-color: white;
+    animation: rotateA 2.5s linear infinite 0.4s;
+}
+  
+.kinetic::before {
+    transform: rotate(90deg);
+    animation: rotateB 2.5s linear infinite;
+}
+  
+@keyframes rotateA {
+    0%, 25% {
+        transform: rotate(0deg);
+    }
+    50%, 75% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+@keyframes rotateB {
+    0%, 25% {
+      transform: rotate(90deg);
+    }
+    50%, 75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(450deg);
+    }
+}
