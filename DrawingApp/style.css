@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+}
+
+html {
+    transition: all 0.4s ease-in;
+}
+  
+html.dark {
+    --primary-color: white;
+    --secondary-color: black;
+}
+
+html.dark {
+    background-color: rgb(56, 56, 56);
+    color: var(--primary-color);
+}
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /*background-color: white;*/
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+}
+
+
+canvas {
+    border: 3px solid rgb(88, 136, 175);
+}
+  
+.toolbox {
+    background-color: rgb(88, 136, 175);
+    border: 1px solid rgb(94, 76, 207);
+    display: flex;
+    width: 805px;
+    padding: 1rem;
+}
+  
+.toolbox > * {
+    /*background-color: white;*/
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    height: 40px;
+    width: 40px;
+    margin: 0.2rem;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+button:focus{
+    outline: none;
+}
+
+.toolbox > *:last-child {/*select the last child in the toolbox*/
+    margin-left: auto;/*push to right side*/
+}
+
+.toggle {
+    font-size: small;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
