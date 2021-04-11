@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(135, 181, 219);
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+    /*flex-wrap: wrap;*/
+}
+
+header {
+    position: absolute;
+    top: 10px;
+    left: 45%;
+    letter-spacing: 2px;
+}
+
+.empty {
+    height:140px;
+    width: 140px;
+    margin: 5px;
+    border: solid 5px black;
+    background: white;
+}
+  
+.fill {/*random image*/
+    background-image: url('https://source.unsplash.com/random/140x140');
+    height: 130px;
+    width: 130px;
+    cursor: pointer;
+}
+  
+.hold {
+    border: solid 4px rgb(175, 175, 175);
+}
+  
+.hovered {
+    background-color: rgb(39, 39, 39);
+    border-color: white;
+    border-style: dashed;
+}
+  
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+    header {
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
+    
+}
