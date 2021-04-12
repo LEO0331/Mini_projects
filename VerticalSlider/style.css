@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+}
+
+.slider-container {
+    position: relative;/*all inside will be absolute*/
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-slide {
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.4s ease-in-out;
+}
+
+.left-slide > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+  
+.left-slide h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+    margin-top: -35px;
+}
+  
+.right-slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    width: 60%;
+    transition: transform 0.4s ease-in-out;
+}
+  
+.right-slide > div {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+  
+button {
+    background-color: white;
+    border: none;
+    color: rgb(138, 137, 137);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 16px;
+}
+  
+button:hover {
+    color: rgb(48, 48, 48);
+}
+  
+button:focus {
+    outline: none;
+}
+
+.slider-container .action-buttons button {
+    position: absolute;
+    left: 40%;
+    top: 50%;/*middle*/
+    z-index: 20;/*alwaits on top*/
+}
+  
+.slider-container .action-buttons .down-button {
+    transform: translateX(-100%);
+    border-top-left-radius: 6px;/*round corner*/
+    border-bottom-left-radius: 6px;
+}
+  
+.slider-container .action-buttons .up-button {
+    transform: translateY(-100%);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
