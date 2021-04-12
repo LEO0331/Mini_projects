@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(56, 56, 56);
+    padding-bottom: 50px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.nav {
+    position: fixed; /*top*/
+    background-color: rgb(26, 26, 26);
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;/*change color after scroll*/
+}
+  
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    transition: all 0.2s ease-in-out;
+}
+  
+.nav ul {
+    display: flex;/*row*/
+    list-style-type: none;/*no bullet point*/
+    align-items: center;
+    justify-content: center;
+}
+  
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: all 0.2s ease-in-out;
+}
+  
+.nav.active {
+    background-color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+  
+.nav.active a {
+    color: black;
+}
+  
+.nav.active .container {
+    padding: 12px 0;
+}
+  
+.nav a.current, .nav a:hover {
+    color: #cf3322;
+    font-weight: bold;
+}
+  
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1615591162771-65e8708ca97c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Njl8fHxlbnwwfHx8&auto=format&fit=crop&w=800&q=60');
+    background-repeat: no-repeat;/*image will only be shown once*/
+    background-size: cover;
+    background-position: bottom center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 25px;
+    z-index: -2;
+}
+  
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+  
+.hero h1 {
+    font-size: 50px;
+    margin: -25px 0 25px;
+}
+  
+.hero p {
+    font-size: 25px;
+    letter-spacing: 1.2px;
+}
+  
+.content h2 {
+    font-size: 150%;
+    margin: 25px 10px;
+}
+  
+.content p {
+    color: rgb(73, 73, 73);
+    line-height: 35px;
+    letter-spacing: 1.5px;
+    margin: 25px 10px;
+}
