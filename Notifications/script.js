@@ -1,6 +1,10 @@
 const button = document.getElementById('button')
 const toasts = document.querySelector('.toasts')
 //random messages and types
+/* 
+let message = undefined or null*
+let type = undefined or null*
+*/
 const messages = [
     'Message One',
     'Message Two',
@@ -10,7 +14,7 @@ const messages = [
 ]
 const types = ['info', 'success', 'error']
 button.addEventListener('click', () => createNotification())
-//missing values are set to undefined
+//missing values are set to undefined: function createNotification()*
 function createNotification(message, type) {//default: message = null, type = null
     const notif = document.createElement('div')//<div></div>
     notif.classList.add('toast')//<div class="toast"></div>
