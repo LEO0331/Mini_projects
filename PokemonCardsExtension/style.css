@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #e9e9d5;
+    background: linear-gradient(to right, #e9e9ee, #e9e9d5);
+    margin: 0;
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    letter-spacing: 2px;
+}
+  
+.poke-container {
+    display: flex;
+    flex-wrap: wrap;/*next line, responsive*/
+    align-items: space-between;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+  
+.pokemon {/*each pokemon card*/
+    background-color: rgb(216, 216, 216);/*dynamic*/
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(75, 75, 75, 0.5);
+    margin: 5px;
+    padding: 20px;
+    text-align: center;
+}
+  
+.pokemon .img-container {
+    background-color: rgba(255, 255, 255, 0.568);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+}
+  
+.pokemon .img-container img {
+    max-width: 90%;/*image inside container*/
+    margin-top: 15px;
+}
+  
+.pokemon .info {
+    margin-top: 20px;
+}
+  
+.pokemon .info .number {
+    background-color: rgba(0, 0, 0, 0.068);
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.9em;
+}
+  
+.pokemon .info .name {
+    margin: 15px 0 8px;
+    letter-spacing: 1px;
+}
+
+.btn {
+    /*background-color: var(--secondary-color);*/
+    background-color: transparent;
+    border: 1px solid rgb(165, 187, 41);
+    color: #0d0e1a;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.158), 0 8px 8px rgba(0, 0, 0, 0.205);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin: 10px;
+}
+  
+.btn:active {
+    transform: scale(0.95);
+}
+  
+.btn:focus {
+    outline: none;/*0, no outline when click*/
+}
+
+.search {
+    background-color: transparent;
+    border: 1px solid rgb(165, 187, 41);
+    border-radius: 40px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: black;
+    margin: 5px;
+}
+  
+.search::placeholder {
+    color: #868bd3;
+}
+  
+.search:focus {
+    outline: none;
+    background-color: var(--primary-color);
+}
