@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #2a3599;
+    color: white;
+    padding: 5px;
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+h1 {
+    margin: 5px 0 15px;
+    text-align: center;
+}
+  
+.container {
+    background-color: #12124e;
+    box-shadow: 0px 3px 8px rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    width: 400px;
+    max-width: 100%;
+}
+  
+.result-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: flex-start;/*beginning*/
+    align-items: center;
+    position: relative;/*button absolute*/
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    padding: 10px 8px;
+    height: 55px;
+    width: 100%;
+}
+  
+.result-container #result {
+    word-wrap: break-word;
+    max-width: calc(100% - 45px);/*button will be ?px, result will not overlap the button*/
+}
+  
+.result-container .btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 45px;/*button size*/
+    height: 45px;
+    font-size: 24px;
+}
+  
+.btn {
+    border: none;
+    background-color: #33338a;
+    color: white;
+    font-size: 18px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+  
+.btn-large {
+    display: block;
+    width: 100%;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.btn:active{
+    transform: scale(0.95);
+}
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+  
