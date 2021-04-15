@@ -3,9 +3,9 @@ const good = document.querySelector('#good')
 const cheap = document.querySelector('#cheap')
 const fast = document.querySelector('#fast')
 /*
-const good = document.getElementById('#good')
-const cheap = document.getElementById('#cheap')
-const fast = document.getElementById('#fast')
+const good = document.getElementById('good')
+const cheap = document.getElementById('cheap')
+const fast = document.getElementById('fast')
 */
 toggles.forEach(toggle => toggle.addEventListener('change', event => doTrick(event.target)))
 //use 'change' to the checkbox
