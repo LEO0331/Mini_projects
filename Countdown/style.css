@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #959bb8;
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    overflow: hidden; /*hide scrollbars*/
+}
+
+h3 {
+    font-size: 22px;
+    margin: 6px;
+    text-transform: uppercase;
+}
+  
+.counter {
+    position: fixed; /*put the left top edge in the middle*/
+    top: 50%;
+    left: 50%;
+    /*translate() method moves an element from its current position*/
+    transform: translate(-50%, -50%);/*container middle in the window middle*/
+    text-align: center;
+}
+  
+.counter.hide {/*scale down and out*/
+    transform: translate(-50%, -50%) scale(0);/*scale(0) to hide*/
+    animation: hide 0.3s ease-out;
+}
+  
+@keyframes hide {/*animation*/
+    0% {
+      transform: translate(-50%, -50%) scale(1);/*default*/
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+}
+  
+.final {/*not shown by default*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-align: center;
+}
+  
+.final.show {
+    transform: translate(-50%, -50%) scale(1);
+    animation: show 0.3s ease-out;
+}
+  
+@keyframes show {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+  
+    30% {
+      transform: translate(-50%, -50%) scale(1.3);
+    }
+  
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+}
+  
+.nums {
+    color: #2940a8;
+    font-size: 55px;
+    position: relative;/*inside absolute*/
+    overflow: hidden;/*nothing go out the container*/
+    width: 300px;
+    height: 55px;
+}
+  
+.nums span {
+    position: absolute;/*positioned relative to the nearest positioned ancestor*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(120deg);
+    transform-origin: top center;/*specify the start points of the rotation e.g.bottom center*/
+}
+  
+.nums span.in {
+    transform: translate(-50%, -50%) rotate(0deg);/*show current class*/
+    animation: goIn 0.4s ease-in-out;
+}
+  
+.nums span.out {
+    animation: goOut 0.4s ease-in-out;
+}
+  
+@keyframes goIn {
+    0% {
+      transform: translate(-50%, -50%) rotate(120deg);
+    }
+  
+    30% {/*bounce effect: go forward and back*/
+      transform: translate(-50%, -50%) rotate(-25deg);
+    }
+  
+    60% {
+      transform: translate(-50%, -50%) rotate(15deg);
+    }
+  
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+  
+@keyframes goOut {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  
+    60% {
+      transform: translate(-50%, -50%) rotate(25deg);
+    }
+  
+    100% {
+      transform: translate(-50%, -50%) rotate(-120deg);
+    }
+}
+
+button {
+    background-color: rgb(130, 144, 190);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 30px;
+    margin: 6px;
+    font-size: 18px;
+}
+
+button:active {
+    transform: scale(0.95); /*click effect, a link becomes active when you click on it*/
+}
+  
+button:focus { /*focus selector*/
+    outline: 0;
+}
