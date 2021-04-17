@@ -1,0 +1,35 @@
+/*position: https://www.w3schools.com/css/css_positioning.asp*/
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    background-color: rgb(26, 26, 26);
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 450px;
+}
+  
+.square {
+    background-color: #252525;
+    box-shadow: 0 0 3px black;
+    height: 18px;
+    width: 18px;
+    margin: 2px;
+    transition: 2.5s ease;/*fade effect*/
+}
+  
+.square:hover {
+    transition-duration: 0s;/*immediately light up*/
+}
