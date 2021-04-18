@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/*position: https://www.w3schools.com/css/css_positioning.asp*/
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    background-color: #e6e6e6;
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+.magic {
+    background-color: #6cadcc;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 18px;
+    cursor: pointer;
+    position: fixed;
+    top: 5px;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px rgba(47, 88, 221, 0.5);
+    z-index: 50;/*button on top*/
+}
+  
+.magic:focus {
+    outline: none;
+}
+  
+.magic:active {/*remove box shadow*/
+    box-shadow: none;
+    transform: translateY(2px);/*move down: bounce effect*/
+}
+  
+.boxes {
+    top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    transition: 0.3s ease;
+}
+  
+.boxes.big {
+    width: 600px;
+    height: 600px;
+}
+  
+.boxes.big .box {
+    transform: rotateZ(360deg);/*rotate to big pic*/
+}
+  
+.box {
+    background-image: url('https://media.giphy.com/media/EZqwsBSPlvSda/giphy.gif');/*gif*/
+    background-repeat: no-repeat;
+    background-size: 500px 500px;/*part of the image*/
+    position: relative;
+    height: 125px;/*important: 4 row and column*/
+    width: 125px;
+    transition: 0.3s ease;
+}
+  
+.box::after {
+    content: '';
+    background-color: #5e85ce;
+    position: absolute;/*box relative*/
+    top: 8px;
+    right: -15px;
+    height: 100%;
+    width: 15px;
+    transform: skewY(45deg);/*3d effect*/
+}
+  
+.box::before {
+    content: '';
+    background-color: #244179;
+    position: absolute;
+    bottom: -15px;
+    left: 8px;
+    height: 15px;
+    width: 100%;
+    transform: skewX(45deg);
+}
+  
