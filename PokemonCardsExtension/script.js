@@ -9,8 +9,8 @@ const count = 152 //change to reach more pokemon
 type pokemon name and press search to search certain pokemon in main page
 clear the search by pressing reload to return main page */
 const colors = {
-    fire: '#FDDFDF',
-    grass: '#DEFDE0',
+	fire: '#FDDFDF',
+    	grass: '#DEFDE0',
 	electric: '#faf7c5',
 	water: '#DEF3FD',
 	ground: '#d1a779',
@@ -23,10 +23,10 @@ const colors = {
 	flying: '#3dcde3',
 	fighting: '#e33d61',
 	normal: '#F5F5F5',
-    ghost: '#eaa3ff',
-    steel: '#adadad',
-    ice: '#addeff',
-    dark: '#636363'
+    	ghost: '#eaa3ff',
+    	steel: '#adadad',
+    	ice: '#addeff',
+    	dark: '#636363'
 }
 const main_types = Object.keys(colors) //keys as value, array of different types
 /*
