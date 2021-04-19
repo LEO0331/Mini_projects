@@ -2,11 +2,12 @@ const container = document.getElementById('poke-container')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 const API = 'https://pokeapi.co/api/v2/pokemon/'
-const count = 152 //change to reach more pokemon
-//press enter or search botton to show all pokemons in main page
-//type pokemon name and press search to search certain pokemon in main page
-//clear the search by pressing reload to return main page 
+const listItems = []
 let searchValue = ''
+const count = 152 //change to reach more pokemon
+/*press enter or search botton to show all pokemons in main page
+type pokemon name and press search to search certain pokemon in main page
+clear the search by pressing reload to return main page */
 const colors = {
     fire: '#FDDFDF',
     grass: '#DEFDE0',
@@ -82,6 +83,7 @@ const getPokemonbyName = async (url) => {
 
 const createPokemonCard = (pokemon) => {
     const pokemonEl = document.createElement('div') //create div
+    listItems.push(pokemonEl)
     pokemonEl.classList.add('pokemon')
     //name: under "species" or "forms"
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1) //uppercase the first letter
@@ -104,7 +106,7 @@ const createPokemonCard = (pokemon) => {
     pokemonEl.innerHTML = pokemonInnerHTML //put pokemon info into index.html
     container.appendChild(pokemonEl) //under <div class="poke-container" id="poke-container">
 }
-
+/*
 form.addEventListener('submit', event => {//only work on <form>
     event.preventDefault() 
     const searchTerm = search.value.toLowerCase()
@@ -118,3 +120,22 @@ form.addEventListener('submit', event => {//only work on <form>
         fetchPokemons()
     }
 })
+*/
+fetchPokemons()
+//e.g. item.innerText: "#001↵Bulbasaur↵Type: grass,poison"
+form.addEventListener('submit', event => {//search for specific type or pokemon
+    event.preventDefault()
+    filterData(search.value)
+})
+
+function filterData(searchTerm) {
+    listItems.forEach(item => {
+        let len = item.innerText.indexOf("T") - 1//pokemon name 
+        let type_start = item.innerText.indexOf(":") + 2//first type letter
+        if(item.innerText.toLowerCase().slice(5, len).includes(searchTerm.toLowerCase()) || item.innerText.toLowerCase().slice(type_start).includes(searchTerm.toLowerCase())) {
+            item.classList.remove('hide')
+        } else {
+            item.classList.add('hide')
+        }
+    })
+}
