@@ -106,3 +106,7 @@ h1 {
     outline: none;
     background-color: var(--primary-color);
 }
+
+div.pokemon.hide {
+    display: none;
+}
