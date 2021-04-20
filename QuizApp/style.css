@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+/*position: https://www.w3schools.com/css/css_positioning.asp*/
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #93a5c0;
+    background-image: linear-gradient(300deg, #d0d8e6 0%, #99a9c2 100%);
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+.quiz-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 8px 3px rgba(100, 100, 100, 0.2);
+    width: 650px;
+    overflow: hidden;
+}
+  
+.quiz-header {
+    padding: 3.5rem;
+}
+  
+h2 {
+    padding: 1.2rem;
+    text-align: center;
+    margin: 0;
+}
+  
+ul {
+    list-style-type: none;/*no bullet point*/
+    padding: 0;
+}
+  
+ul li {
+    font-size: 1.3rem;
+    margin: 1.1rem 0;
+}
+  
+ul li label {
+    cursor: pointer;
+}
+  
+button {
+    background-color: #6e78a0;
+    color: white;
+    border: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: inherit;
+    padding: 1.2rem;
+}
+  
+button:hover {
+    background-color: #243cc4;
+}
+  
+button:focus {
+    outline: none;
+    background-color: #373b75;
+}
+
+button:active {
+    transform: translateY(5%);/*bounce effect*/
+}
