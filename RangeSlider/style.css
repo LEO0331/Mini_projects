@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+/*position: https://www.w3schools.com/css/css_positioning.asp*/
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: linear-gradient(135deg, #dadee4 0%, #b2c0d6 100%);
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /*hide scrollbars*/
+}
+
+h1 {
+    position: absolute; /*positioned relative to the nearest positioned ancestor: body */
+    top: 15px;
+}
+  
+.range-container {
+    position: relative;
+}
+  
+input[type='range'] {
+    width: 300px;
+    margin: 20px 0;
+    -webkit-appearance: none;/*hide track line*/
+}
+  
+input[type='range']:focus {
+    outline: none;
+}
+  
+input[type='range'] + label {
+    background-color: white;
+    position: absolute;/*absolute to range-container: relative*/
+    top: -25px;
+    left: 110px;/*total 300 width: 110 + 80 + 110*/
+    width: 80px;/*start at the middle*/
+    padding: 6px 0;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+  
+/* Chrome & Safari */
+input[type='range']::-webkit-slider-runnable-track {
+    background: rgb(21, 39, 138);
+    border-radius: 5px;
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+}
+  
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 1.5px solid rgb(21, 39, 138);
+    margin-top: -5px;
+    cursor: pointer;
+}
+  
+/* Firefox */
+input[type='range']::-moz-range-track {
+    background: rgb(21, 39, 138);
+    border-radius: 5px;
+    width: 100%;
+    height: 13px;
+    cursor: pointer;
+}
+  
+input[type='range']::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid rgb(21, 39, 138);
+    margin-top: -7px;
+    cursor: pointer;
+}
+  
+/* IE */
+input[type='range']::-ms-track {
+    background: rgb(21, 39, 138);
+    border-radius: 5px;
+    width: 100%;
+    height: 13px;
+    cursor: pointer;
+}
+  
+input[type='range']::-ms-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid rgb(21, 39, 138);
+    margin-top: -7px;
+    cursor: pointer;
+}
