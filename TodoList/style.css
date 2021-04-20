@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+/*position: https://www.w3schools.com/css/css_positioning.asp*/
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #d6d6d6;
+    color: rgb(43, 43, 43);
+    margin: 0;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: rgb(131, 156, 226);
+    font-size: 9rem;
+    text-align: center;
+    opacity: 0.3;
+}
+  
+form {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    width: 450px;
+}
+  
+.input {
+    border: none;
+    color: rgb(51, 51, 51);
+    font-size: 2.5rem;
+    padding: 1.5rem 2.5rem;
+    display: block;
+    width: 100%;
+}
+  
+.input::placeholder {
+    color: #cccccc;
+}
+  
+.input:focus {
+    outline-color: rgb(131, 156, 226);
+    /*outline: nonet*/
+}
+  
+.todos {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+  
+.todos li {
+    border-top: 1.5px solid #ebebeb;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+}
+  
+.todos li.completed {
+    color: #999999;
+    text-decoration: line-through;
+}
+  
+small {
+    color: #7e7e7e;
+    margin-top: 3rem;
+    text-align: center;
+}
+  
