@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+/*position: https://www.w3schools.com/css/css_positioning.asp*/
+* {
+    box-sizing: border-box; /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh; /*viewport height*/
+    display: flex; /*https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/*/
+    flex-direction: column; /* vertical VS row(default): horizontal*/
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    text-transform: uppercase;
+}
+  
+.logo {
+    width: 160px;
+}
+  
+.nav-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 18px;
+}
+  
+.open-btn {
+    position: fixed;/*viewport*/
+    top: 15px;
+    left: 15px;
+}
+  
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+  
+.nav.visible {
+    transform: translateX(0);/*normal position*/
+}
+  
+.nav-black {
+    background-color: rgb(43, 38, 38);
+    width: 55%;
+    max-width: 500px;
+    min-width: 300px;
+    transition-delay: 0.3s;
+}
+  
+.nav-black.visible {
+    transition-delay: 0s;/*remove the delay*/
+}
+  
+.nav-red {
+    background-color: rgb(223, 32, 42);
+    width: 90%;
+    transition-delay: 0.2s;
+}
+  
+.nav-red.visible {
+    transition-delay: 0.2s;/*effect of black/red/white open and close order*/
+}
+  
+.nav-white {
+    background-color: white;
+    width: 90%;
+    padding: 35px;
+    position: relative;
+    transition-delay: 0s;
+}
+  
+.nav-white.visible {
+    transition-delay: 0.3s;
+}
+  
+.close-btn {
+    opacity: 0.25;
+    position: absolute;
+    top: 35px;
+    right: 25px;
+}
+  
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.list li {
+    margin: 18px 0;
+}
+  
+.list li a {
+    color: rgb(43, 37, 37);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+  
+.list ul {
+    list-style-type: none;
+    padding-left: 18px;
+}
