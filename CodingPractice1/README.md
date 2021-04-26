@@ -80,7 +80,7 @@ should return true.
 return true or false
 
 Brute force: O(n^2) --> O(a*b); O(1) - Space Complexity
-`
+```
 function containsCommonItem(arr1, arr2) {
   for (let i=0; i < arr1.length; i++) {
     for ( let j=0; j < arr2.length; j++) {
@@ -130,7 +130,7 @@ function containsCommonItem(arr1, arr2){
 	}
 	return false
 }
-`
+```
 Array
 End: push('element')/pop() --> O(1)
 Start: shift()/unshift('element') --> O(n)
@@ -140,7 +140,7 @@ Start: shift()/unshift('element') --> O(n)
 Middle: splice(start, deleteCount, itemTobeAdded): changes the original array, return the removed items VS slice(start, end): selected from start to end (end not included), original array will NOT be modified(return a shallow copy of a portion of an array) --> O(n)
 String: convert it to an array --> split() --> https://www.w3schools.com/jsref/jsref_split.asp
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
-`
+```
 Class MyArray{
 	constructor(){
 		this.length = 0;
@@ -174,5 +174,5 @@ Class MyArray{
 }
 
 const newArray = new MyArray()
-`
-
+```
+Q2: Reverse a string
