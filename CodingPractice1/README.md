@@ -216,3 +216,32 @@ function reverse(s) {
 	return o.toString(); 
 }
 ```
+Q3: Merge two sorted arrasy
+```
+function mergeArray(array1, array2){
+	const ans = []
+	if(array1.length === 0){
+		return arr2
+	}
+	if(array2.length === 0){
+		return arr1
+	}
+	let item1 = arr1[0]
+	let item2 = arr2[0]
+	let i = 1;
+  	let j = 1;
+	while (item1 || item2){
+	   	if(item2 === undefined || item1 < item2){
+		    ans.push(item1);
+		    item1 = array1[i];
+		    i++;
+	   	}   
+	   	else {
+		    ans.push(item2);
+		    item2 = array2[j];
+		    j++;
+	   	}
+	}
+  	return ans;
+}
+```
