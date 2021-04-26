@@ -176,3 +176,42 @@ Class MyArray{
 const newArray = new MyArray()
 ```
 Q2: Reverse a string
+```
+//https://stackoverflow.com/questions/958908/how-do-you-reverse-a-string-in-place-in-javascript/16776621#16776621
+function reverse(str){ 
+	const arr = str.split("")
+	for(let i = 0; i<arr.length/2; i++){ //swap base on the middle element
+		temp = arr[i]
+		arr[i] = arr[arr.length-1-i]
+		arr[arr.length-1-i] = temp
+	}
+	return arr.join("")
+	//str.split("").reverse().join(""): simple ASCII characters, not support UTF-16/multi-byte characters
+}
+
+function reverse(str){ 
+	if(!str || str.length < 2 || typeof str !== 'string'){ //undefined, only one element
+		return 'not string input' 
+	}
+	let s = ''
+	for(let i = str.lengt-1; i >= 0; i--){
+		s += str[i]
+	}
+	return s
+}
+
+function reverse(s) {
+	var o = [];
+	for (var i = s.length - 1, j = 0; i >= 0; i--, j++)
+	    o[j] = s[i];
+	return o.join(''); 
+}
+
+function reverse(s) {
+	var o = [];
+	for(let i = str.lengt-1; i >= 0; i--){
+		o.push(str[i])
+	}
+	return o.toString(); 
+}
+```
