@@ -186,7 +186,8 @@ function reverse(str){
 		arr[arr.length-1-i] = temp
 	}
 	return arr.join("")
-	//str.split("").reverse().join(""): simple ASCII characters, not support UTF-16/multi-byte characters
+	//str.split("").reverse().join("") --> simple ASCII characters, not support UTF-16/multi-byte characters
+	//const reverseFunc = str => [...str].reverse().join('')
 }
 
 function reverse(str){ 
