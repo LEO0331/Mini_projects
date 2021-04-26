@@ -133,4 +133,44 @@ function containsCommonItem(arr1, arr2){
 Array
 End: push('element')/pop() --> O(1)
 Start: shift()/unshift('element') --> O(n)
+Array(static vs dynamic)
+End: push('element')/pop() --> O(1) --- append('element'): O(1)/O(n)
+Start: shift()/unshift('element') --> O(n)
+Middle: splice(start, deleteCount, itemTobeAdded): changes the original array, return the removed items VS slice(start, end): selected from start to end (end not included), original array will NOT be modified(return a shallow copy of a portion of an array) --> O(n)
+String: convert it to an array --> split() --> https://www.w3schools.com/jsref/jsref_split.asp
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
+Class MyArray{
+	constructor(){
+		this.length = 0;
+		this.data = {};
+	}
+	get(index){ 
+		retuen this.data[index]
+	}
+	push(item){ //0(1)
+		this.data[this.length] = item
+		this.length++
+		return this.length
+	}
+	pop(){ //0(1)
+		const lastItem = this.data[this.length-1]
+		delete this.data[this.length-1]
+		this.length--
+		return lastItem
+	}
+	delete(index){ //0(n)
+		const item = this.data[index]
+		this.shiftItems(index)
+	}
+	shiftItems(index){ //method
+		for(let i = index; i < this.length-1; i++){
+			this.data[i] = this.data[i+1]
+		}
+		delete this.data[this.length-1]
+		this.length--
+	}
+}
+
+const newArray = new MyArray()
+
 
