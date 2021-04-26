@@ -1,4 +1,4 @@
-##Data Structure Notes##
+# Data Structure Notes
 Good Code? https://www.bigocheatsheet.com/
 1. Readable
 2. Scalable(Big 0) -> time/space complexity
