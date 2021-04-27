@@ -276,6 +276,15 @@ class HashTable {
     	}
     	return undefined //empty bucket
     }
+    keys(){ //get all keys in the hash table
+    	const keyArr = []
+    	for(let i=0; i<this.data.length; i++){
+    		if(this.data[i]){
+    			keyArr.push(this.data[i][0][0])
+    		}
+    	}
+    	return keyArr
+    }
 }
 
 const myHashTable = new HashTable(50);
