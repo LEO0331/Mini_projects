@@ -5,7 +5,7 @@ Given a sorted array nums, remove the duplicates in-place so that each element a
 Array, Two-pointer 
 
 # Solution
-Use fast and slow pointer to record. If they point to different value, both pointers move forward. If they point to same value, only fast pointer move forward(actually fast pointer keep moving). The final result will be slow pointer add 1 because it represents the array length.
+Use/Draw fast and slow pointers to record. If they point to different value, both pointers move forward. If they point to same value, only fast pointer move forward(actually fast pointer keep moving). The final result will be slow pointer add 1 because it represents the array length.
 ```
 var removeDuplicates = function(nums) {
     const len = nums.length  
