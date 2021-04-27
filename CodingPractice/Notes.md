@@ -241,7 +241,8 @@ function mergeArray(array1, array2){
   	return ans;
 }
 ```
-## Hash: insert/delete/search/lookup --> O(1)
+## Hash
+Insert/Delete/Search/Lookup --> O(1)
 ```
 class HashTable {
     constructor(size){
@@ -281,4 +282,7 @@ const myHashTable = new HashTable(50);
 myHashTable.set('banana', 10000)
 myHashTable.get('banana')
 ```
+## Linked lists
+Insert/Delete --> O(1)
+Search/Lookup --> O(n)
 
