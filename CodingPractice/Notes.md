@@ -19,16 +19,16 @@ Looping (for, while)
 Outside Function call (function())
 
 -Rule Book-
-Rule 1: Always worst Case
-Rule 2: Remove Constants
-Rule 3: Different inputs should have different variables. O(a+b). A and B arrays nested would be O(a*b), + for steps in order, * for nested steps
-Rule 4: Drop Non-dominant terms
+- Always worst Case
+- Remove Constants
+- Different inputs should have different variables. O(a+b). A and B arrays nested would be O(a*b), + for steps in order, * for nested steps
+- Drop Non-dominant terms
 
 -What causes Space complexity?-
-Variables
-Data Structures
-Function Call
-Allocations
+- Variables
+- Data Structures
+- Function Call
+- Allocations
 
 Step By Step through a problem:
 1. When the interviewer says the question, write down the key points at the top (i.e. sorted array). Make sure you have all the details. Show how organized you are.
@@ -52,34 +52,31 @@ read certain chunks of the input from disk into memory, write the output back to
 combine them later.
 
 Checklist:
-[✅]It works
-[✅]Good use of data structures
-[✅]Code Re-use/ Do Not Repeat Yourself
-[✅]Modular - makes code more readable, maintainable and testable
-[✅]Less than O(N^2). We want to avoid nested loops if we can since they are expensive. Two separate loops are better than 2 nested loops
-[✅]Low Space Complexity --> Recursion can cause stack overflow, copying of large arrays may exceed memory of machine
+- [✅]It works
+- [✅]Good use of data structures
+- [✅]Code Re-use/ Do Not Repeat Yourself
+- [✅]Modular - makes code more readable, maintainable and testable
+- [✅]Less than O(N^2). We want to avoid nested loops if we can since they are expensive. Two separate loops are better than 2 nested loops
+- [✅]Low Space Complexity --> Recursion can cause stack overflow, copying of large arrays may exceed memory of machine
+
 Tips:
-[✅]Hash Maps are usually the answer to improve Time Complexity
-[✅]If it's a sorted array, use Binary tree to achieve O(log N). Divide and Conquer - Divide a data set into smaller chunks and then repeating a process with a subset of data. Binary search is a great example 
-[✅]Try Sorting your input
-[✅]Hash tables and precomputed information (i.e. sorted) are some of the best ways to optimize your code
-[✅]Look at the Time vs Space tradeoff. Sometimes storing extra state in memory can help the time(Runtime)
-[✅]If the interviewer is giving you advice/tips/hints. Follow them
-[✅]Space time tradeoffs: Hastables usually solve this a lot of the times. You use more space, but you can get a time optimization to the process. In programming, you often times can use up a little bit more space to get faster time
+- [✅]Hash Maps are usually the answer to improve Time Complexity
+- [✅]If it's a sorted array, use Binary tree to achieve O(log N). Divide and Conquer - Divide a data set into smaller chunks and then repeating a process with a subset of data. Binary search is a great example 
+- [✅]Try Sorting your input
+- [✅]Hash tables and precomputed information (i.e. sorted) are some of the best ways to optimize your code
+- [✅]Look at the Time vs Space tradeoff. Sometimes storing extra state in memory can help the time(Runtime)
+- [✅]If the interviewer is giving you advice/tips/hints. Follow them
+- [✅]Space time tradeoffs: Hastables usually solve this a lot of the times. You use more space, but you can get a time optimization to the process. In programming, you often times can use up a little bit more space to get faster time
 
-Q1: Given 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain any common items
-For Example: 4bytes = 32bits --> array1: 4*4 = 16 bytes of storage
-const array1 = ['a', 'b', 'c', 'x']; const array2 = ['z', 'y', 'i'];
-should return false.
------------
-const array1 = ['a', 'b', 'c', 'x']; const array2 = ['z', 'y', 'x'];
-should return true.
+Q1: Given 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain any common items. For Example: 4bytes = 32bits --> array1: 4*4 = 16 bytes of storage
 
-2 parameters - arrays - no size limit - need to consider large size
-return true or false
+2 parameters - arrays - no size limit - need to consider large size -> return true or false
 
 Brute force: O(n^2) --> O(a*b); O(1) - Space Complexity
 ```
+const array1 = ['a', 'b', 'c', 'x']; const array2 = ['z', 'y', 'i']; --> return false
+const array1 = ['a', 'b', 'c', 'x']; const array2 = ['z', 'y', 'x']; --> return true
+
 function containsCommonItem(arr1, arr2) {
   for (let i=0; i < arr1.length; i++) {
     for ( let j=0; j < arr2.length; j++) {
