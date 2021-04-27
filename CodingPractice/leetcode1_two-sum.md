@@ -5,7 +5,7 @@ Given an array of integers nums and an integer target, return indices of the two
 Hash table, Array
 
 # Solution
-Use Map to check whether target-current value has shown 
+Use Map to check whether the value of target minus current has shown 
 
 ```
 /*
