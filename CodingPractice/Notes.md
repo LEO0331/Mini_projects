@@ -276,7 +276,7 @@ class HashTable {
     	}
     	return undefined //empty bucket
     }
-    keys(){ //get all keys in the hash table
+    keys(){ //get all keys in the hash table(no collision)
     	const keyArr = []
     	for(let i=0; i<this.data.length; i++){
     		if(this.data[i]){
@@ -285,12 +285,34 @@ class HashTable {
     	}
     	return keyArr
     }
+    keys2(){ //get all keys in the hash table(handle collision)
+    	const keyArr2 = []
+    	for(let i=0; i<this.data.length; i++){
+    	    if(this.data[i]){
+	    /*
+	        if (this.data[i].length > 1){
+		    for (let j=0; j < this.data[i].length; j++) {
+                        keyArr2.push(this.data[i][j][0])
+                    }
+		}else{
+		    keyArr2.push(this.data[i][0][0]
+		}
+	    }
+	    */
+	        for (let j=0; j < this.data[i].length; j++) {
+                    keyArr2.push(this.data[i][j][0])
+                }
+    	}
+    	return keyArr2
+    }
 }
 
 const myHashTable = new HashTable(50);
 myHashTable.set('banana', 10000)
 myHashTable.get('banana')
 ```
+Q4:
+
 ## Linked lists
 Insert/Delete --> O(1)
 Search/Lookup --> O(n)
