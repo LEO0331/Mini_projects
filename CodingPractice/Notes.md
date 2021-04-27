@@ -247,3 +247,44 @@ function mergeArray(array1, array2){
   	return ans;
 }
 ```
+Hash: insert/delete/search/lookup --> O(1)
+```
+class HashTable {
+    constructor(size){
+      this.data = new Array(size);
+    }
+
+    _hash(key) {
+        let hash = 0;
+        for (let i = 0; i < key.length; i++){ //fit inside the bucket
+            hash = (hash + key.charCodeAt(i) * i) % this.data.length
+    	}
+        return hash;
+    }
+    set(key, value){ //0(1)
+    	let adr = this._hash(key)
+    	if(!this.data[adr]){ 
+    		this.data[adr] = []
+    	} 
+    	this.data[adr].push([key, value])
+    	return this.data
+    }
+    get(key){ //0(1) if no collision, 0(n) worst case
+    	let adr = this._hash(key)
+    	const currentBucket = this.data[adr]
+    	if(currentBucket){
+    		for(let i=0; i<currentBucket.length; i++){
+    			if(currentBucket[i][0] === key ){
+    				return currentBucket[i][1]
+    			}
+    		}
+    	}
+    	return undefined //empty bucket
+    }
+}
+
+const myHashTable = new HashTable(50);
+myHashTable.set('banana', 10000)
+myHashTable.get('banana')
+```
+
