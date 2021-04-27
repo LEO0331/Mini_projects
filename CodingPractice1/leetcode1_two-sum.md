@@ -14,7 +14,7 @@ Use Map to check whether target-current value has shown
 @return {number[]}
 */
 var twoSum = function (nums, target) {
-  const map = new Map();
+  const map = new Map(); //can store any data type as a key
   for (let i = 0; i < nums.length; i++) {
     const complementary = target - nums[i];
     if (map.has(complementary)) {
@@ -30,7 +30,7 @@ var twoSum = function(nums, target) {
     if(nums.length < 2){ //limitation
 		    return false
 	  }
-    let obj = {}
+    let obj = {} //only store string as a key
     for(let i=0; i<nums.length; i++){
         if (obj[target - nums[i]] !== undefined) {
             return [obj[target - nums[i]], i];
