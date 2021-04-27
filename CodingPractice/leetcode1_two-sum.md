@@ -14,7 +14,7 @@ Use Map to check whether target-current value has shown
 @return {number[]}
 */
 var twoSum = function (nums, target) {
-  const map = new Map(); //can store any data type as a key
+  const map = new Map(); //can store any data type as a key and maintain insertion order
   for (let i = 0; i < nums.length; i++) {
     const complementary = target - nums[i];
     if (map.has(complementary)) {
