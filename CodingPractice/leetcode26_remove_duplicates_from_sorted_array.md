@@ -7,6 +7,10 @@ Array, Two-pointer
 # Solution
 Use/Draw fast and slow pointers to record. If they point to different value, both pointers move forward. If they point to same value, only fast pointer move forward(actually fast pointer keep moving). The final result will be slow pointer add 1 because it represents the array length.
 ```
+/*
+ * @param {number[]} nums
+ * @return {number}
+ */
 var removeDuplicates = function(nums) {
     const len = nums.length  
     if(len === 0){
