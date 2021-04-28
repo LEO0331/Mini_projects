@@ -26,3 +26,21 @@ var maxSubArray = function(nums) {
     return max
 };
 ```
+Optimize sum of the prefix
+```
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+    let max = nums[0];
+    let min = 0;
+    let sum = 0;
+    for (let i = 0; i < nums.length; i++) {
+        sum += nums[i];
+        max = Math.max(max, sum - min)
+        min = Math.min(min, sum)
+    }
+    return max;
+};
+```
