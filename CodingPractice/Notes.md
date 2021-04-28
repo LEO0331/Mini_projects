@@ -319,7 +319,22 @@ array = [2,3,4,5] -> return undefined
 array = [2,5,5,2,3,5,1,2,4] -> return 5 because the pairs are before 2
 
 function firstRecurringCharacter(input) {
-	
+	//const map = new Map()
+	let map = {}
+	for (let i = 0; i < nums.length; i++) {
+	    if (map[nums[i]] !== undefined){
+	    	return nums[i]
+	    }else{
+	    	map[nums[i]] = i
+	    }
+	    /*
+	    if (map.has(nums[i])) {
+	      	return nums[i]
+	    }
+	    map.set(nums[i], i)
+	    */
+  	}
+  	return undefined
 }
 ```
 ## Linked lists
