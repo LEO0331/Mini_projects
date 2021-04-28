@@ -18,6 +18,7 @@ var maxSubArray = function(nums) {
       sum = 0 //clear the value after each iteration
       for(let j=i; j<nums.length; j++){
         sum += nums[j]
+        // max = Math.max(max, sum)
         if(sum > max){
           max = sum
         }
@@ -26,12 +27,8 @@ var maxSubArray = function(nums) {
     return max
 };
 ```
-Optimize sum of the prefix
+Optimize sum of the prefix -> O(n)
 ```
-/**
- * @param {number[]} nums
- * @return {number}
- */
 var maxSubArray = function(nums) {
     let max = nums[0];
     let min = 0;
@@ -40,6 +37,8 @@ var maxSubArray = function(nums) {
         sum += nums[i];
         max = Math.max(max, sum - min)
         min = Math.min(min, sum)
+        //if (sum - min > max) max = sum - min
+        //if (sum < min) min = sum
     }
     return max;
 };
