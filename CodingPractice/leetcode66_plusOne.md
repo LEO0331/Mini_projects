@@ -5,3 +5,28 @@ Given a non-empty array of decimal digits representing a non-negative integer, i
 Iteration, math addition concept
 
 # Solution
+assign a carry to determine whether the digit need to be carried or not
+```
+/*
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function(digits) {
+    let carry = 1
+    for(let i=digits.length-1; i > -1; i--){
+        if(carry){
+            let sum = carry + digits[i]
+            digits[i] = sum % 10
+            if(digits[i] === 0){
+                carry = 1
+            }else{
+                carry = 0
+            }
+        }
+    }
+    if(carry === 1){
+        digits.unshift(1)
+    }
+    return digits
+};
+```
