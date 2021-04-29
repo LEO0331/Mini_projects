@@ -26,3 +26,37 @@ var removeDuplicates = function(nums) {
     return slowPointer+1
 };
 ```
+# Complement 
+3 kinds of pointers:
+- Fast-slow pointers: often used in sliding window
+```
+l = r = 0
+while(condition 1)
+    if(condition 2)
+        l++
+    r++
+return ans
+```
+- Left-right endpoints pointers: often used in dichotomy
+```
+l = 0
+r = n-1
+while l < r
+    if (found)
+        return ans
+    if (condition 1)
+        l++
+    else if (condition 2)
+        r--
+return notFound
+```
+- Fixed-spacing pointers: often used in sliding window
+```
+l = 0
+r = k
+while (condition 1)
+    self-define condition 2
+    l += 1
+    r += 1
+return ans
+```
