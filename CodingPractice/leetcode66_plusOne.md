@@ -5,7 +5,7 @@ Given a non-empty array of decimal digits representing a non-negative integer, i
 Iteration, math addition concept
 
 # Solution
-assign a carry to determine whether the digit need to be carried or not
+Assign a carry to calculate
 ```
 /*
  * @param {number[]} digits
@@ -16,8 +16,8 @@ var plusOne = function(digits) {
     for(let i=digits.length-1; i > -1; i--){
         if(carry){
             let sum = carry + digits[i]
-            digits[i] = sum % 10
-            if(digits[i] === 0){
+            digits[i] = sum % 10 //update the current digit to the right number
+            if(digits[i] === 0){ //check the addition of the digit to determine whether a carry is required
                 carry = 1
             }else{
                 carry = 0
