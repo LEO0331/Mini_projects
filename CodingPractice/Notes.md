@@ -338,7 +338,7 @@ function firstRecurringCharacter(input) {
 }
 ```
 ## Singly/Doubly Linked Lists
-- Prepend/Append/ --> O(1) 
+- Prepend/Append --> O(1) 
 - Search/Lookup --> O(n) 
 - Insert/Delete --> O(1)/O(n)
 - Memory address -> array: sequential vs linked lists/hash: scatter
@@ -553,4 +553,16 @@ class DoubleLinkedList{
 	}
 }
 ```
+# Stack
+LIFO -> Lookup: O(n) pop/push/peek: O(1)
+```
+class Stack{
+	
+}
+```
+# Queue
+FIFO -> Lookup: O(n) dequeue/enqueue/peek: O(1)
+```
 
+```
+Q5:
