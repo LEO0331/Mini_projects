@@ -338,8 +338,10 @@ function firstRecurringCharacter(input) {
 }
 ```
 ## Singly/Doubly Linked lists
-Prepend/Append/ --> O(1) Search/Lookup --> O(n) Insert/Delete --> O(1)/O(n)
-Memory address -> array: sequential vs linked lists/hash: scatter
+- Prepend/Append/ --> O(1) 
+- Search/Lookup --> O(n) 
+- Insert/Delete --> O(1)/O(n)
+- Memory address -> array: sequential vs linked lists/hash: scatter
 ```
 let linkedList = {
 	head:{ //first node
