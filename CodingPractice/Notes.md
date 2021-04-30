@@ -443,6 +443,23 @@ class LinkedList{
 		this.length--
 		return this //this.printList()
 	}
+	reverse() {
+		if(!this.head.next){ //this.length === 1
+			return this.head
+		}
+		let first = this.head
+		this.tail = this.head //original first
+		let second = first.next
+		while(second){
+			let tmp = second.next
+			second.next = first
+			first = second
+			second = tmp
+		}
+		this.head.next = null
+		this.head = first
+		return this
+  	}
 }
 
 class DoubleLinkedList{
