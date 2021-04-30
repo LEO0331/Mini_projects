@@ -554,7 +554,7 @@ class DoubleLinkedList{
 }
 ```
 # Stack
-LIFO -> Lookup: O(n) pop/push/peek: O(1)
+LIFO -> Lookup: O(n); pop/push/peek: O(1)
 ```
 class Node {
   constructor(value){
@@ -617,7 +617,7 @@ class Stack{
 }
 ```
 # Queue
-FIFO -> Lookup: O(n) dequeue/enqueue/peek: O(1)
+FIFO -> Lookup: O(n); dequeue/enqueue/peek: O(1)
 ```
 class Queue{
 	constructor(){
@@ -654,4 +654,7 @@ class Queue{
 	}
 }
 ```
-Q5:
+Q5: Implement a first in first out (FIFO) queue using only two stacks
+```
+
+```
