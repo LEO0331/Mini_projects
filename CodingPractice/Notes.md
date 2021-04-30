@@ -337,7 +337,201 @@ function firstRecurringCharacter(input) {
   	return undefined
 }
 ```
-## Linked lists
-Insert/Delete --> O(1)
-Search/Lookup --> O(n)
+## Singly/Doubly Linked lists
+Prepend/Append/ --> O(1) Search/Lookup --> O(n) Insert/Delete --> O(1)/O(n)
+Memory address -> array: sequential vs linked lists/hash: scatter
+```
+let linkedList = {
+	head:{ //first node
+		value: a1,
+		next: {
+			value: a2, //keep adding till the end
+			next: {
+				value: an, //last node
+				next: null
+				}
+			}
+		}
+	}
+}
+
+class Node{
+	constructor(value){		
+		this.value: value,
+		this.next: null
+	}
+}
+
+class LinkedList{
+	constructor(value){
+		this.head = {
+			value: value,
+			next: null
+		}
+		this.tail = this.head
+		this.length = 1
+	}
+	append(value){
+		const newNode = {
+			value: value,
+			next: null
+		}
+		//const newNode = new Node(value)
+		this.tail.next = newNode
+		this.tail = newNode
+		this.length++
+		return this
+	}
+	prepend(value){
+		const newNode = {
+			value: value,
+			next: null 
+		}
+		newNode.next = this.head
+		this.head = newNode
+		this.length++
+		return this
+	}
+	printList(){
+		const arr = []
+		let currentNode = this.head
+		while(currentNode !== null){
+			arr.push(currentNode.value)
+			currentNode = currentNode.next
+		}
+		return arr
+	}
+	insert(index, value){
+		const newNode = {
+			value: value,
+			next: null 
+		}
+		if(index >= this.length){
+			return this.append(value)
+		}
+		if (index === 0) {
+  			this.prepend(value)
+  			return this.printList()
+		}
+		const prev = this.traverseToIndex(index-1)
+		const nxt = prev.next
+		prev.next = newNode
+		newNode.next = nxt
+		this.length++
+		return this //this.printList()
+	}
+	traverseToIndex(index){
+		//check params
+		let count = 0
+		let currentNode = this.head
+		while(count !== index){
+			currentNode = currentNode.next
+			count++
+		}
+		return currentNode
+	}
+	delete(index){
+		const newNode = {
+			value: value,
+			next: null 
+		}
+		const prev = this.traverseToIndex(index-1)
+		const removeNode = prev.next
+		prev.next = removeNode.next
+		this.length--
+		return this //this.printList()
+	}
+}
+
+class DoubleLinkedList{
+	constructor(value){
+		this.head = {
+			value: value,
+			next: null,
+			prev: null
+		}
+		this.tail = this.head
+		this.length = 1
+	}
+	append(value){
+		const newNode = {
+			value: value,
+			next: null,
+			prev: null
+		}
+		//const newNode = new Node(value)
+		newNode.prev = this.tail
+		this.tail.next = newNode
+		this.tail = newNode
+		this.length++
+		return this
+	}
+	prepend(value){
+		const newNode = {
+			value: value,
+			next: null,
+			prev: null 
+		}
+		newNode.next = this.head
+		this.head.prev = newNode
+		this.head = newNode
+		this.length++
+		return this
+	}
+	printList(){
+		const arr = []
+		let currentNode = this.head
+		while(currentNode !== null){
+			arr.push(currentNode.value)
+			currentNode = currentNode.next
+		}
+		return arr
+	}
+	insert(index, value){
+		const newNode = {
+			value: value,
+			next: null,
+			prev: null 
+		}
+		if(index >= this.length){
+			return this.append(value)
+		}
+		if (index === 0) {
+  			this.prepend(value)
+  			return this.printList()
+		}
+		const lead = this.traverseToIndex(index-1)
+		const follow = lead.next
+		lead.next = newNode
+		newNode.prev = lead
+		newNode.next = follow
+		follow.prev = newNode
+		this.length++
+		return this //this.printList()
+	}
+	traverseToIndex(index){
+		//check params
+		let count = 0
+		let currentNode = this.head
+		while(count !== index){
+			currentNode = currentNode.next
+			count++
+		}
+		return currentNode
+	}
+	delete(index){
+		const newNode = {
+			value: value,
+			next: null 
+		}
+		const lead = this.traverseToIndex(index-1)
+		const removeNode = lead.next
+		removeNode.prev = lead
+		lead.next = removeNode.next
+		// removeNode.next = lead.next
+		this.length--
+		return this //this.printList()
+	}
+}
+```
 
