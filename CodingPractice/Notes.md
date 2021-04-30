@@ -337,7 +337,7 @@ function firstRecurringCharacter(input) {
   	return undefined
 }
 ```
-## Singly/Doubly Linked lists
+## Singly/Doubly Linked Lists
 - Prepend/Append/ --> O(1) 
 - Search/Lookup --> O(n) 
 - Insert/Delete --> O(1)/O(n)
