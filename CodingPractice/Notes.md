@@ -68,7 +68,7 @@ Tips:
 - [✅]If the interviewer is giving you advice/tips/hints. Follow them
 - [✅]Space time tradeoffs: Hastables usually solve this a lot of the times. You use more space, but you can get a time optimization to the process. In programming, you often times can use up a little bit more space to get faster time
 
-Q1: Given 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain any common items. For Example: 4bytes = 32bits --> array1: 4*4 = 16 bytes of storage
+## Q1: Given 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain any common items. For Example: 4bytes = 32bits --> array1: 4*4 = 16 bytes of storage
 
 2 parameters - arrays - no size limit - need to consider large size -> return true or false
 
@@ -127,7 +127,7 @@ function containsCommonItem(arr1, arr2){
 	return false
 }
 ```
-##  Array
+# Array
 - End: push('element')/pop() --> O(1)
 - Start: shift()/unshift('element') --> O(n)
 - Array(static vs dynamic)
@@ -171,7 +171,7 @@ class MyArray{
 
 const newArray = new MyArray()
 ```
-Q2: Reverse a string
+## Q2: Reverse a string
 ```
 //https://stackoverflow.com/questions/958908/how-do-you-reverse-a-string-in-place-in-javascript/16776621#16776621
 function reverse(str){ 
@@ -212,7 +212,7 @@ function reverse(s) {
 	return o.toString(); 
 }
 ```
-Q3: Merge two sorted arrasy
+## Q3: Merge two sorted arrasy
 ```
 function mergeArray(array1, array2){
 	const ans = []
@@ -311,7 +311,7 @@ const myHashTable = new HashTable(50);
 myHashTable.set('banana', 10000)
 myHashTable.get('banana')
 ```
-Q4: Given an array, get first recurring chracter
+## Q4: Given an array, get first recurring chracter
 ```
 array = [2,5,1,2,3,5,1,2,4] -> return 2
 array = [2,1,1,2,3,5,1,2,4] -> return 1
@@ -337,7 +337,7 @@ function firstRecurringCharacter(input) {
   	return undefined
 }
 ```
-## Singly/Doubly Linked Lists
+# Singly/Doubly Linked Lists
 - Prepend/Append --> O(1) 
 - Search/Lookup --> O(n) 
 - Insert/Delete --> O(1)/O(n)
@@ -654,7 +654,7 @@ class Queue{
 	}
 }
 ```
-Q5: Implement a first in first out (FIFO) queue using only two stacks
+## Q5: Implement a first in first out (FIFO) queue using only two stacks
 ```
 /*
  * Initialize data structure 
