@@ -656,5 +656,55 @@ class Queue{
 ```
 Q5: Implement a first in first out (FIFO) queue using only two stacks
 ```
-
+/*
+ * Initialize data structure 
+ */
+var MyQueue = function() {
+    constructor(){
+	    this.first = []
+	    this.last = []
+    }
+};
+/*
+ * Push element x to the back of queue
+ * @param {number} x
+ * @return {void}
+ */
+MyQueue.prototype.push = function(x) {
+    const length = this.first.length
+    for (let i = 0; i < length; i++) {
+    	this.last.push(this.first.pop())
+    }
+    this.last.push(x)
+    return this
+};
+/*
+ * Removes the element from in front of queue and returns that element
+ * @return {number}
+ */
+MyQueue.prototype.pop = function() {
+    const length = this.last.length
+    for (let i = 0; i < length; i++) {
+    	this.first.push(this.last.pop())
+    }
+    this.first.pop()
+    return this
+};
+/*
+ * Get the front element
+ * @return {number}
+ */
+MyQueue.prototype.peek = function() {
+    if (this.last.length > 0) {
+      return this.last[0]
+    }
+    return this.first[this.first.length - 1];
+};
+/* var obj = new MyQueue()
+ * obj.push(x)
+ * var param_2 = obj.pop()
+ * var param_3 = obj.peek()
+ */
 ```
+# Tree
+
