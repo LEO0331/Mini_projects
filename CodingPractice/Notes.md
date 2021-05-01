@@ -874,5 +874,7 @@ function binarySearch(arr, val, l, r){
     */
 }
 ```
-
-
+Both red-black trees and AVL trees are the most commonly used balanced binary search trees and they support insertion, deletion and look-up in guaranteed O(logN) time; Red-black trees are more general purpose. They do relatively well on add, remove, and look-up but AVL trees have faster look-ups at the cost of slower add/remove. 
+- AVL trees are more rigidly balanced and hence provide faster look-ups(look-up intensive task use an AVL tree)
+- For an insert intensive tasks, use a Red-Black tree
+- AVL trees store the balance factor at each node. This takes O(N) extra space. If we know that the keys that will be inserted in the tree will always be greater than zero, we can use the sign bit of the keys to store the colour information of a red-black tree. In such cases, red-black tree takes no extra space
