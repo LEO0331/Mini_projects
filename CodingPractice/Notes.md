@@ -707,4 +707,172 @@ MyQueue.prototype.peek = function() {
  */
 ```
 # Tree
+Binary Search Tree -> Lookup/Insert/Delete: O(log(n)) -> unbalance: O(n)
+```
+class Node {
+    constructor(value){
+	    this.left = null
+	    this.right = null
+	    this.value = value
+    }
+}
+
+class BinarySearchTree {
+    constructor(){
+        this.root = null
+    }
+    insert(value){
+    	const newNode = new Node(value)
+    	if(!this.root){
+    		this.root = newNode
+    	}else{
+    		let currentNode = this.root
+    		while(true){
+    			if(value < currentNode){
+    				if(!currentNode.left){
+    					currentNode.left = newNode
+    					return this
+    				}
+    				currentNode = currentNode.left
+    			}else{
+    				if(!currentNode.right){
+    					currentNode.right = newNode
+    					return this
+    				}
+    				currentNode = currentNode.right
+    			}
+    		}
+    	}
+    }
+    lookup(value){
+    	if(this.root === null){
+    		return false
+    	}
+    	let currentNode = this.root
+    	while(currentNode){
+    		if(value < currentNode.value){
+				currentNode = currentNode.left
+    		} else if(value > currentNode.value){
+    			currentNode = currentNode.right
+    		}else if(value === currentNode.value){
+    			return currentNode
+    		}
+    	}
+    	return false
+    }
+    remove(value){
+    	if(!this.root){
+    		return false
+    	}
+    	let currentNode = this.root
+    	let parentNode = null
+    	while(currentNode){
+    		if(value < currentNode.value){
+    			parentNode = currentNode
+    			currentNode = currentNode.left
+    		}else if(value > currentNode.value){
+    			parentNode = currentNode
+    			currentNode = currentNode.right
+    		}else if(value === currentNode.value){
+    			if(!currentNode.right){ //no right child
+    				if(!parentNode){
+    					this.root = currentNode
+    				}else{
+    					if(currentNode.value < parentNode.value){ //make current left child a child of parent
+    						parentNode.left = currentNode.left
+    					}else if(currentNode.value > parentNode.value){ //make left child a right child of parent
+    						parentNode.right = currentNode.left
+    					}
+    				}
+    			}else if(!currentNode.right.left){ //currentNode.right becomes the currentNode
+    				currentNode.right.left = currentNode.left //new currentNode.left = original.left
+    				if(!parentNode){
+    				this.root = currentNode.right
+    				}else{ //currentNode is at the left/right of the parentNode
+    					if(currentNode.value < parentNode.value){
+              				parentNode.left = currentNode.right
+            			}else if(currentNode.value > parentNode.value){
+              				parentNode.right = currentNode.right
+            			}
+    				}
+    			}else{ //Right child that has a left child
+    				let leftmost = currentNode.right.left
+			        let leftmostParent = currentNode.right
+			        while(leftmost.left !== null) { //right child's left most child
+			            leftmostParent = leftmost
+			            leftmost = leftmost.left
+			        }
+			        //Parent's left subtree is now leftmost's right subtree, leftmostParent.left as currentNode
+    				leftmostParent.left = leftmost.right //leftmost = leftmost.right
+          			leftmost.left = currentNode.left
+          			leftmost.right = currentNode.right
+          			if(parentNode === null) {
+			            this.root = leftmost
+			          	}else{
+				            if(currentNode.value < parentNode.value){
+				                parentNode.left = leftmost
+				            } else if(currentNode.value > parentNode.value){
+				                parentNode.right = leftmost
+				            }
+		            }
+    			}
+    			return true
+    		}
+    	}
+    }
+}
+
+function traverse(node) {
+    const tree = { value: node.value };
+    tree.left = node.left === null ? null : traverse(node.left);
+    tree.right = node.right === null ? null : traverse(node.right);
+    return tree;
+}
+
+function binarySearch(arr, val){
+    let start = 0
+    let end = arr.length - 1
+    while (start <= end){
+        let mid = Math.floor((start + end)/2)
+        if (arr[mid] === val){
+            return mid
+        }
+        if (val < arr[mid]){
+            end = mid - 1
+        }else{
+            start = mid + 1
+        }
+    }
+    return -1
+}
+
+function binarySearch(arr, val, l, r){
+	let mid = Math.floor((l + (r + 1))/2)
+	if (arr[mid] === val){
+        return mid
+    }
+    if(l >= r){
+    	return -1
+    }
+    if(val < arr[mid]){
+    	return binarySearch(arr, val, l, mid - 1)
+    }else{
+    	return binarySearch(arr, val, mid + 1, r)
+    }
+    /*
+    if(l <= r){
+    	if (arr[mid] === val){
+        	return mid
+    	}else if(val < arr[mid]){
+    		r = mid - 1
+    	}else{
+    		l = mid + 1
+    	}
+    	return binarySearch(arr, val, l, r)
+    }
+    return -1
+    */
+}
+```
+
 
