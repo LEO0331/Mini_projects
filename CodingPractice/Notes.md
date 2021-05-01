@@ -878,3 +878,59 @@ Both red-black trees and AVL trees are the most commonly used balanced binary se
 - AVL trees are more rigidly balanced and hence provide faster look-ups(look-up intensive task use an AVL tree)
 - For an insert intensive tasks, use a Red-Black tree
 - AVL trees store the balance factor at each node. This takes O(N) extra space. If we know that the keys that will be inserted in the tree will always be greater than zero, we can use the sign bit of the keys to store the colour information of a red-black tree. In such cases, red-black tree takes no extra space
+
+Binary Heap -> Lookup: O(n) -> Insert/Delete: O(log(n)) -> left to right insertion through bottom-up/bubble up(Best: O(1)); Memory Heap != Heap Data structure
+```
+class QElement {
+    constructor(element, priority)
+    {
+        this.element = element
+        this.priority = priority
+    }
+}
+class PriorityQueue {
+    constructor()
+    {
+        this.items = []
+    }
+  	enqueue(element, priority){
+	    const qElement = new QElement(element, priority)
+	    let contain = false
+	    for (let i = 0; i < this.items.length; i++) {
+	        if (this.items[i].priority > qElement.priority) {
+	            this.items.splice(i, 0, qElement)
+	            contain = true
+	            break
+	        }
+	    }
+	    if (!contain) { //highest priority added at the end of the queue
+	        this.items.push(qElement)
+	    }
+	}
+	dequeue(){
+	    if (this.isEmpty())
+	        return "Underflow"
+	    return this.items.shift()
+	}
+	front(){ 
+	    if (this.isEmpty())
+	        return "No elements in Queue"
+	    return this.items[0]
+	}
+	rear(){ 
+	    if (this.isEmpty())
+	        return "No elements in Queue"
+	    return this.items[this.items.length - 1]
+	}
+	isEmpty(){
+    	return this.items.length == 0
+	}
+	printPQueue(){
+	    let str = ""
+	    for (var i = 0; i < this.items.length; i++)
+	        str += this.items[i].element + " "
+	    return str
+	}
+}
+```
+
