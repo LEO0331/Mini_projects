@@ -26,7 +26,7 @@ var maxProfit = function(prices) {
     return profit
 };
 ```
-2. Take any profit if there is a gap between low and high price: time -> 0(n), space -> 0(1)
+2. Take any profit/Collect all price gain if there is a gap between low and high price(buy at low, sell at high): time -> 0(n), space -> 0(1)
 ```
 /*
  * @param {number[]} prices
