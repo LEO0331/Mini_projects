@@ -963,5 +963,34 @@ class Graph { //construct through edge list, adjacency list, adjacency matrix
 } 
 ```
 # Recursion
+```
+function reverseString(str) { //consider to use when converting sth into a tree/graph, divide and conquer, Merge/Quick sort
+	//implement a function that reverses a string using iteration and recursion
+	let arr = str.split("")
+	let mid = str.length/2
+	for(let i=0; i<=mid; i++){ //arr.reverse()
+		let temp = arr[i]
+		arr[i] = arr[arr.length-i-1]
+		arr[arr.length-i-1] = temp
+	}
+	return arr.join("")
+	/*
+	1. let arr2 = []
+	   while(arr.length > 0){
+	       arr2.push(arr.pop())
+	   }
+	   return arr2.join("")
+	2. var newString = ""
+	   for (let i = str.length - 1; i >= 0; i--) { 
+               newString += str[i]
+           }
+           return newString
+        3. if (str === "") // terminal case that will end the recursion
+    	       return ""
+       	   else
+               return reverseString(str.substr(1)) + str.charAt(0)
+	*/
+}
+```
 
 
