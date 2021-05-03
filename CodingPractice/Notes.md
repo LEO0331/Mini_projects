@@ -224,18 +224,18 @@ function mergeArray(array1, array2){
 	}
 	let item1 = arr1[0]
 	let item2 = arr2[0]
-	let i = 1;
-  	let j = 1;
+	let i = 1
+  	let j = 1
 	while (item1 || item2){
 	   	if(item2 === undefined || item1 < item2){
-		    ans.push(item1);
-		    item1 = array1[i];
-		    i++;
+		    ans.push(item1)
+		    item1 = array1[i]
+		    i++
 	   	}   
 	   	else {
-		    ans.push(item2);
-		    item2 = array2[j];
-		    j++;
+		    ans.push(item2)
+		    item2 = array2[j]
+		    j++
 	   	}
 	}
   	return ans;
