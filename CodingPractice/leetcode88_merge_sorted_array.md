@@ -5,7 +5,7 @@ Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one s
 Merge Sort 
 
 # Solution
-Insert array nums2 from the end of the array nums1: count number from right to the left
+Insert array nums2 from the end of the array nums1: count number from right to the left(large to small)
 ```
 /* 
 * @param {number[]} nums1
