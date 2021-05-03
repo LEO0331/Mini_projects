@@ -7,6 +7,10 @@ Hash table
 # Solution
 Create a hash table/map to record elements
 ```
+/*
+ * @param {number[]} nums
+ * @return {boolean}
+ */
 var containsDuplicate = function(nums) {
     //let obj = {}
     const map = new Map()
