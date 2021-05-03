@@ -1119,3 +1119,25 @@ In-built function -> linear search: O(n)
   return item === 'item'
 })
 - array.includes('item')
+# BFS
+- pos: shortest path/closer nodes; cons: more memory
+- time: O(|V|) -> |V| is the number of nodes, traverse all nodes
+- space: O(|V|) -> hold all vertices in the queue
+```
+
+```
+# DFS
+- pos: less memory/does path exist; cons: slow
+- time: O(|V|) -> traverse all nodes
+- space: O(|V|) -> O(h) in recursive implementation, where h is the maximal depth of your tree; O(|V|) when using an iterative solution with a stack instead of a queue
+```
+
+```
+## Q7: Which search is suitable?
+- If you know a solution is not far from the root of the tree: BFS
+- If the tree is very deep and solutions are rare: BFS(DFS will take long)
+- If the tree is very wide: DFS(BFS need to much memory)
+- If solutions are frequent but located deep in the tree: DFS
+- Determining whether a path exists between two nodes: DFS
+- Finding the shortest path: BFS
+
