@@ -992,5 +992,84 @@ function reverseString(str) { //consider to use when converting sth into a tree/
 	*/
 }
 ```
+# Sorting
+- JS sort(): Sort number by its charCodeAt(0), only consider first index -> add sort(function(a, b){return a - b}) to sort in ascending order
+- Stable: same key retain their relative order before and after the sort
+### Bubble Sort
+```
+function BS(array){ //time: O(n^2) space: O(1); Stable
+	for(let i = 0; i < array.length; i++){
+		for(let j = 0; j < array.length; j++){ //JS Array Out of Bounds: undefined
+			if(array[j] > array[j+1]){ //swap with the neighbor value
+				let temp = array[j]
+				array[j] = array[j+1]
+				array[j+1] = temp
+			}
+		}
+	}
+	return array
+}
+```
+### Selection Sort
+```
+function SS(array){ //time: O(n^2) space: O(1); Unstable
+	for(let i = 0; i < array.length; i++){ //select the smallest position
+		let index = i
+		let tmp = arr[i]
+		for(let j = i + 1; j < array.length; j++){
+			if(array[j] < array[index]){ 
+				index = j //update minimum
+			}
+		}
+		arr[i] = array[index]
+		array[index] = tmp //swap
+	}
+	return array
+}
+```
+### Insertion Sort
+```
+function IS(array){ //time: O(n^2) space: O(1); Stable -> when input is small/nearly sorted: O(n)
+	for(let i = 0; i < array.length; i++){ 
+		if(array[i] < array[0]){ //move the item to the first position
+			array.unshift(array.splice(i,1)[0])
+		} else {
+			for(let j = 1; j < i; j++){
+				if(array[i] > array[j-1] && array[i] < array[j]){ //insert i at position j
+					array.splice(j,0,array.splice(i,1)[0])
+				}
+			}
+		}
+	}
+	return array
+}
+```
+### Merge Sort
+```
+function MS(array){ //time: O(nlog(n)) space: O(n); Stable 
+	if (array.length === 1) {
+    	return array
+  	}
+  	const mid = Math.floor(array.length/2)
+  	const left = array.slice(0, mid)
+  	const right = array.slice(mid)
+  	return merge(MS(left), MS(right))
+}
+function merge(left, right){
+	let result = []
+	let l = 0
+	let r = 0
+	while(l < left.length && r < right.length){
+		if(left[l] < right[r]){
+			result.push(left[l++])
+		}else{
+			result.push(right[r++])
+		}
+	}
+	return result.concat(left.slice(l)).concat(right.slice(r)) //console.log(left, right)
+}
+```
+### Quick Sort
+```
 
-
+```
