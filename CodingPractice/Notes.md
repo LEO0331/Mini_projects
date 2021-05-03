@@ -212,7 +212,7 @@ function reverse(s) {
 	return o.toString(); 
 }
 ```
-## Q3: Merge two sorted arrasy
+## Q3: Merge two sorted array
 ```
 function mergeArray(array1, array2){
 	const ans = []
