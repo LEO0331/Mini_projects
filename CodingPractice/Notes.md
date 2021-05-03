@@ -992,7 +992,7 @@ function reverseString(str) { //consider to use when converting sth into a tree/
 	*/
 }
 ```
-# Sorting
+# Comparison Sort
 - JS sort(): Sort number by its charCodeAt(0), only consider first index -> add sort(function(a, b){return a - b}) to sort in ascending order
 - Stable: same key retain their relative order before and after the sort
 ### Bubble Sort
@@ -1073,3 +1073,5 @@ function merge(left, right){
 ```
 
 ```
+# Non-Comparison Sort
+
