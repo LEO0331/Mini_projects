@@ -13,7 +13,7 @@ var containsDuplicate = function(nums) {
     for(let i = 0; i < nums.length; i++){
         /*
         if(!obj[nums[i]]){
-            obj[nums[i]] = true
+            obj[nums[i]] = true 
         }else{
             return true
         }
@@ -21,7 +21,7 @@ var containsDuplicate = function(nums) {
         if(map.has(nums[i])){
             return true
         }else{
-            map.set(nums[i], i)
+            map.set(nums[i], true) //set to i: slower
         }
     }
     return false
