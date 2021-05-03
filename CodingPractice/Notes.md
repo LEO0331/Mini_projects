@@ -995,6 +995,7 @@ function reverseString(str) { //consider to use when converting sth into a tree/
 # Comparison Sort
 - JS sort(): Sort number by its charCodeAt(0), only consider first index -> add sort(function(a, b){return a - b}) to sort in ascending order
 - Stable: same key retain their relative order before and after the sort
+- Non-Comparison Sort: Bucket/Radix/Counting Sort -> only work with numbers/integers in certain range
 ### Bubble Sort
 ```
 function BS(array){ //time: O(n^2) space: O(1); Stable
@@ -1071,7 +1072,50 @@ function merge(left, right){
 ```
 ### Quick Sort
 ```
-
+function QS(array, left, right){ //time: O(nlog(n)) space: O(log(n)); Unstable -> O(n^2) if pivot is the min/max in an array
+	let pivot
+  	let partitionIndex
+  	if(left < right) {
+	    pivot = right
+	    partitionIndex = partition(array, pivot, left, right)
+	    QS(array, left, partitionIndex - 1)
+	    QS(array, partitionIndex + 1, right)
+  	}
+  	return array;
+}
+function partition(array, pivot, left, right){
+  	let pivotValue = array[pivot] //choose the rightest value as pivot
+  	let partitionIndex = left
+  	for(let i = left; i < right; i++) {
+	    if(array[i] < pivotValue){
+	      	swap(array, i, partitionIndex)
+	      	partitionIndex++
+	    }
+  	}
+  	swap(array, right, partitionIndex)
+  	return partitionIndex
+}
+function swap(array, firstIndex, secondIndex){
+    var temp = array[firstIndex]
+    array[firstIndex] = array[secondIndex]
+    array[secondIndex] = temp
+}
 ```
-# Non-Comparison Sort
-
+## Q6: What Sorting Algorithm could be used?
+- Sort 10 schools around your house by distance: Insertion Sort
+- eBay sorts listings by the current Bid amount: Radix/Counting Sort
+- Sport scores on ESPN: Quick Sort
+- Massive database (can't fit all into memory) needs to sort through past year's user data: Merge Sort
+- Almost sorted Udemy review data needs to update and add 2 new reviews: Insertion Sort
+- Temperature Records for the past 50 years in Canada: Radix/Counting Sort OR Quick Sort
+- Large user name database needs to be sorted with random data: Quick Sort
+# Search
+In-built function -> linear search: O(n)
+- array.indexOf('item')
+- array.findIndex(function(item){
+  return item === 'item'
+});
+- array.find(function(item){
+  return item === 'item'
+})
+- array.includes('item')
