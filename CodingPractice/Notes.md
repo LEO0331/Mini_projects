@@ -135,7 +135,7 @@ function containsCommonItem(arr1, arr2){
 - Start: shift()/unshift('element') --> O(n)
 - Middle: splice(start, deleteCount, itemTobeAdded): changes the original array, return the removed items VS slice(start, end): selected from start to end (end not included), original array will NOT be modified(return a shallow copy of a portion of an array) --> O(n)
 - String: convert it to an array --> split() --> https://www.w3schools.com/jsref/jsref_split.asp, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor, https://medium.com/@ashfaqueahsan61/time-complexities-of-common-array-operations-in-javascript-c11a6a65a168
-
+- In javascript, arrays are objects, so there's no such thing as out of range in javascript arrays. Array indexes are stored as keys. If the index doesn't exists in the array, undefined is returned.
 ```
 class MyArray{
 	constructor(){
