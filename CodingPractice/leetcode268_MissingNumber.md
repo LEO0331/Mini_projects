@@ -17,7 +17,7 @@ var missingNumber = function(nums) {
 ```
 # Complement
 ```
-var missingNumber = function(nums) { //construct array of size n+1, assign each value to -1 
+var missingNumber = function(nums) { //construct array of size n+1, assign each val to -1 
     const arr = new Array(nums.length+1).fill(-1)
     for(const num of nums) { //fill in the array
         res[num] = num
