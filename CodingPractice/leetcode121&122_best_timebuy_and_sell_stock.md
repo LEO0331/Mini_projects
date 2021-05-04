@@ -2,10 +2,8 @@
 Given an array prices where prices[i] is the price of a given stock on the ith day. 
 1. Maximize profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit from this transaction. If no profit, return 0.
 2. Find the maximum profit. Can complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times). But can not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
-
 # Concept
 Array
-
 # Solution
 1. Record the maximum and minimum values through days: time -> 0(n), space -> 0(1)
 ```
