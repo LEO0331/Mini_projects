@@ -5,7 +5,7 @@ Given an integer array nums, move all 0's to the end of it while maintaining the
 Array, two-pointer
 
 # Solution
-use slow and fast pointers to record the position of zero and swap
+Use slow and fast pointers to record the position of zero and swap
 ```
 /*
  * @param {number[]} nums
