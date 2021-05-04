@@ -2,7 +2,7 @@
 Given an integer array, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
 # Concept
-Sliding Window, Sum of the Prefix, Divide and Conquer, DP
+Array, Sliding Window, Sum of the Prefix, Divide and Conquer, DP
 
 # Solution
 Brute Force with sum of the prefix -> O(n^2)
