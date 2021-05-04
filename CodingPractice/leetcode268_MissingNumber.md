@@ -1,7 +1,7 @@
 # Description 
 Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array. Follow up: Using only O(1) extra space complexity and O(n) runtime complexity.
 # Concept
-array, basic area formula(triangular number)
+Array, basic area formula(triangular number)
 # Solution 
 Use 1+2+...+n minus all the elements in a given array to show the missing number without extra space needed
 ```
@@ -18,11 +18,11 @@ var missingNumber = function(nums) {
 # Complement
 ```
 var missingNumber = function(nums) { //construct array of size n+1, assign each value to -1 
-    const res = new Array(nums.length+1).fill(-1)
+    const arr = new Array(nums.length+1).fill(-1)
     for(const num of nums) { //fill in the array
         res[num] = num
     }
-    return res.indexOf(-1) //the remaining -1 index is the missing value
+    return arr.indexOf(-1) //the remaining -1 index is the missing value
     /*
     let obj = {}
     for(let i = 0; i<=nums.length; i++){ //construct map for all elements with val = -1
