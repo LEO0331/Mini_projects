@@ -1201,5 +1201,56 @@ function DFSPostOrder(node, list){ //left -> right -> parent
 - Determining whether a path exists between two nodes: DFS
 - Finding the shortest path: BFS
 # Dynamic Programming 
-
-
+Think about DP: divide and conquer/recursive/memorization/repetitive subproblems
+```
+function memoizeAddTo80(n){ 
+  	let cache = {} 
+  	return function(n){ //closure: access to an outer function’s scope from an inner function
+    	if(n in cache){ //use variable declared in the parent function
+      		return cache[n]
+    	}else{
+      		console.log('long time')
+      		const answer = n + 80
+      		cache[n] = answer
+      		return answer
+    	}
+  	}
+}
+```
+closure example: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+```
+function makeAdder(x) { //function factory
+  	return function(y) {
+    	return x + y
+  	}
+}
+var add5 = makeAdder(5)
+var add10 = makeAdder(10)
+console.log(add5(2)) --> 7
+console.log(add10(2)) --> 12
+```
+## Q8: Improve Fibonacci?
+```
+function fibonacciMaster(){ //O(n)
+   let cache = {}
+   return function fib(n){
+        if(n in cache){
+            return cache[n]
+        }else{
+        	if(n < 2){
+            	return n
+        	}else{
+            	cache[n] = fib(n-1) + fib(n-2)
+            	return cache[n]
+        	}
+    	}
+    }
+}
+function fibonacciMaster2(n){
+    let answer = [0,1]
+    for (let i = 2; i <= n; i++){
+    	answer.push(answer[i-2]+answer[i-1])
+    }
+    return answer.pop() //answer[n-1]
+}
+```
