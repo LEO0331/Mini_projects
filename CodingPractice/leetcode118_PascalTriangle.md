@@ -2,7 +2,7 @@
 Given an integer numRows, return the first numRows of Pascal's triangle(each number is the sum of the two numbers directly above it).
 
 # Concept
-DP, 2d-array
+2d-array, DP
 
 # Solution
 Construct each row based on the previous row -> time complexity: O(numRows^2) -> Space complexity: O(numRows^2)
