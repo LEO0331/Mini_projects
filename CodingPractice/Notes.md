@@ -1112,26 +1112,86 @@ function swap(array, firstIndex, secondIndex){
 # Search
 In-built function -> linear search: O(n)
 - array.indexOf('item')
-- array.findIndex(function(item){
-  return item === 'item'
-});
-- array.find(function(item){
-  return item === 'item'
-})
+- array.findIndex(function(item){return item === 'item'})
+- array.find(function(item){return item === 'item'})
 - array.includes('item')
+
+Find shortest paths between nodes: Dijkstra's algorithm OR Bellman–Ford algorithm(edge contains negative numbers)
 # BFS
 - pos: shortest path/closer nodes; cons: more memory
 - time: O(|V|) -> |V| is the number of nodes, traverse all nodes
 - space: O(|V|) -> hold all vertices in the queue
 ```
+BreadthFirstSearch(){
+    let currentNode = this.root
+    let list = []
+    let queue = [] //keep track of level we add
+    queue.push(currentNode)
+    while(queue.length > 0){ //if the level contains any element
+	    currentNode = queue.shift()
+	    list.push(currentNode.value)
+	    if(currentNode.left) {
+	        queue.push(currentNode.left)
+	    }
+	    if(currentNode.right) {
+	        queue.push(currentNode.right)
+	    }
+    }
+    return list
+}
 
+BreadthFirstSearchRecursive(queue, list){ //[tree.root], []
+	if(!queue.length){
+		return list
+	}
+	let currentNode = queue.shift()
+	list.push(currentNode.value)
+	if(currentNode.left) {
+	    queue.push(currentNode.left)
+	}
+	if(currentNode.right) {
+	    queue.push(currentNode.right)
+	}
+	return this.BreadthFirstSearchRecursive(queue, list)
+}
 ```
 # DFS
 - pos: less memory/does path exist; cons: slow
 - time: O(|V|) -> traverse all nodes
 - space: O(|V|) -> O(h) in recursive implementation, where h is the maximal depth of your tree; O(|V|) when using an iterative solution with a stack instead of a queue
 ```
+function DFSPreOrder(node, list){ //parent -> left -> right
+  	list.push(node.value)
+  	if(node.left) {
+    	traversePreOrder(node.left, list)
+  	}
+  	if(node.right) {
+    	traversePreOrder(node.right, list)
+  	}
+  	return list
+}
 
+function DFSInOrder(node, list){ //left -> parent -> right
+  	if(node.left) {
+    	traverseInOrder(node.left, list)
+  	}
+  	list.push(node.value)
+  	if(node.right) {
+    	traverseInOrder(node.right, list)
+  	}
+  	return list
+}
+
+function DFSPostOrder(node, list){ //left -> right -> parent
+  	if(node.left) {
+    	traversePostOrder(node.left, list)
+  	}
+  	if(node.right) {
+    	traversePostOrder(node.right, list)
+  	}
+  	list.push(node.value)
+  	return list
+}
 ```
 ## Q7: Which search is suitable?
 - If you know a solution is not far from the root of the tree: BFS
@@ -1140,4 +1200,6 @@ In-built function -> linear search: O(n)
 - If solutions are frequent but located deep in the tree: DFS
 - Determining whether a path exists between two nodes: DFS
 - Finding the shortest path: BFS
+# Dynamic Programming 
+
 
