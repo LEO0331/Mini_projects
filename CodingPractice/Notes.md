@@ -1231,7 +1231,7 @@ console.log(add10(2)) --> 12
 ```
 ## Q8: Improve Fibonacci?
 ```
-function fibonacciMaster(){ //O(n)
+function fibonacciMaster(){ //O(n), top-down
    let cache = {}
    return function fib(n){
         if(n in cache){
@@ -1246,7 +1246,7 @@ function fibonacciMaster(){ //O(n)
     	}
     }
 }
-function fibonacciMaster2(n){
+function fibonacciMaster2(n){ //bottom-up 
     let answer = [0,1]
     for (let i = 2; i <= n; i++){
     	answer.push(answer[i-2]+answer[i-1])
