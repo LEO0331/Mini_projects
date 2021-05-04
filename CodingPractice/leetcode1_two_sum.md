@@ -2,7 +2,7 @@
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 # Concept
-Hash table, Array
+Array, Hash table
 
 # Solution
 Use Map to check whether the value of target minus current has shown 
