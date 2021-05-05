@@ -26,7 +26,21 @@ var singleNumber = function(nums) {
     return Object.keys(map).find(key => map[key] === -1) 
 };
 ```
-2. Binary XOR
+2. Bitwise XOR (^)
 ```
-
+var singleNumber = function(nums) {
+   let result = 0
+   for(let i=0; i<nums.length; i++){
+       result = result ^ nums[i]
+   }
+   return result
+};
 ```
+# Complement
+Compare each bit of two numbers in binary form, if the binary bit is the same = 0, different = 1 
+- 0 XOR 0 = 0
+- 0 XOR 1 = 1
+- 1 XOR 0 = 1
+- 1 XOR 1 = 0
+- Commutative law: a ^ b ^ c = a ^ c ^ b
+- 
