@@ -43,4 +43,3 @@ Compare each bit of two numbers in binary form, if the binary bit is the same = 
 - 1 XOR 0 = 1
 - 1 XOR 1 = 0
 - Commutative law: a ^ b ^ c = a ^ c ^ b
-- 
