@@ -1,7 +1,7 @@
 # Description
 Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter. Return true if there is a cycle in the linked list. Otherwise, return false. Follow up: solve it using O(1), constant memory.
 # Concept
-Linked List, Two-pointer
+Linked List, Two-pointer, Hash Table
 # Solution
 1. Flag nodes that have been traversed, if go through the flagged node, a cycle occurs: lesser space
 ```
@@ -45,4 +45,17 @@ var hasCycle = function(head) {
     }
     return twoPointer(head, head)
 }
+```
+3. Hash map
+```
+var hasCycle = function(head) {
+    const hash = new Set()
+    function traverse(node) {
+        if(hash.has(node)) return true
+        if(!node) return false
+        hash.add(node)
+        return traverse(node.next)
+    }
+    return traverse(head)
+};
 ```
