@@ -7,7 +7,7 @@ output: 5->4->3->2->1->NULL --> [5,4,3,2,1]
 # Concept
 Linked List
 # Solution
-1. Iteration: swap two nodes by recording current node and the following node(s) 
+1. Iteration: swap two nodes by recording current node and the following node(s) -> time: O(n), space: O(1)
 ```
 /*
  * Definition for singly-linked list.
@@ -35,9 +35,18 @@ var reverseList = function(head) {
     return pre
 };
 ```
-2. Recursive: 
+2. Recursive: add first node to the tail of the recursively reversed nodes(other nodes without head) -> time: O(n), space: O(n)
 ```
-
+var reverseList = function(head) {
+    if (head === null || head.next === null) { //condition
+        return head
+    }
+    let newList = reverseList(head.next)
+    let second = head.next
+    second.next = head
+    head.next = null
+    return newList
+};
 ```
 # Complement
 - linked list = [1,2,3,4,5], prev = head = [1,2,3,4,5]; cur = head.next = [2,3,4,5]
