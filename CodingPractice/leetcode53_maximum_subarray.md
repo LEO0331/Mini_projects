@@ -1,9 +1,7 @@
 # Description
 Given an integer array, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
-
 # Concept
 Array, Sliding Window, Sum of the Prefix, Divide and Conquer, DP
-
 # Solution
 Brute Force with sum of the prefix -> O(n^2)
 ```
@@ -84,8 +82,8 @@ var maxSubArray = function(nums) {
 OR
 var maxSubArray = function(nums) {
     for (let i = 1; i < nums.length; i++){
-        nums[i] = Math.max(nums[i], nums[i] + nums[i - 1]);
+        nums[i] = Math.max(nums[i], nums[i] + nums[i - 1])
     }
-    return Math.max(...nums);
+    return Math.max(...nums)
 };
 ```
