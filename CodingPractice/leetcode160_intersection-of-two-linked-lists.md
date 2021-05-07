@@ -11,7 +11,7 @@ It is guaranteed that there are no cycles anywhere in the entire linked structur
 # Concept
 Linked Lists, Hash, Two-pointer
 # Solution
-1. Build a Hash for one linked list and search whether it contains node of the other linked list -> time/space: O(n)
+1. Build a hash for one linked list and search whether it contains node of the other linked list -> time/space: O(n)
 ```
 /*
  * Definition for singly-linked list.
@@ -45,7 +45,7 @@ var getIntersectionNode = function(headA, headB) {
 var getIntersectionNode = function(headA, headB) {
     let a = headA
     let b = headB
-    while(a !== b){
+    while(a !== b){ //!=
         if(a === null){
             a = headB
         }else{
