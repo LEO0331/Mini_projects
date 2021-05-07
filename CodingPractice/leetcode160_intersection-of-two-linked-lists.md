@@ -40,8 +40,23 @@ var getIntersectionNode = function(headA, headB) {
     return null
 };
 ```
-2. -> time: O(n), space: O(1)
+2. Iterate a linked list till its end and place it to the head of another linked list, keep iterating, two pointers will meet at one node if there is an intersection -> time: O(n), space: O(1)
 ```
-
+var getIntersectionNode = function(headA, headB) {
+    let a = headA
+    let b = headB
+    while(a !== b){
+        if(a === null){
+            a = headB
+        }else{
+            a = a.next
+        }
+        if(b === null){
+            b = headA
+        }else{
+            b = b.next
+        }
+    }
+    return a
+}
 ```
-
