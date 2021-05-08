@@ -5,7 +5,7 @@ Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
 # Concept
 Stack
 # Solution
-Push left signs in a stack and pop it to compare with right signs to determine whether it matches the map
+Push left signs in a stack and pop it to compare with right signs to determine whether it matches the map -> time/space: O(n)
 ```
 /*
  * @param {string} s
@@ -39,5 +39,11 @@ var isValid = function(s) {
         }
     }
     return stack.length === 0
+    /*
+    while (s.includes("[]") || s.includes("()") || s.includes("{}")) {
+        s = s.replace("[]", "").replace("()", "").replace("{}", "")
+    }
+    return s.length === 0
+    */
 };
 ```
