@@ -18,10 +18,35 @@ Roman numerals are usually written largest to smallest from left to right. Howev
 - C can be placed before D (500) and M (1000) to make 400 and 900.
 Given a roman numeral, convert it to an integer.
 # Concept
-Number
-
+Number, Hash
 # Solution
-
+Build hash to convert roman symbols and compare the current number with the next one to determine whether they fit into special cases(minus)
 ```
-
+/*
+ * @param {string} s
+ * @return {number}
+ */
+var romanToInt = function(s) {
+    var map = {
+        I:1,
+        V:5,
+        X:10,
+        L:50,
+        C:100,
+        D:500,
+        M:1000
+    }
+    let sum = 0
+    for(let i = 0 ; i < s.length ; i++){
+        let n1 = map[s[i]]
+        let n2 = map[s[i+1]]
+        if(n2 > n1){
+            sum = sum + n2 - n1
+            i++
+        }else{
+            sum += n1
+        }
+    }
+    return sum
+};
 ```
