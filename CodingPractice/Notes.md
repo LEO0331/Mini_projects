@@ -1155,7 +1155,7 @@ BreadthFirstSearch(){
 
 BreadthFirstSearchRecursive(queue, list){ //[tree.root], []
 	if(!queue.length){
-		return list
+	    return list
 	}
 	let currentNode = queue.shift()
 	list.push(currentNode.value)
@@ -1176,31 +1176,31 @@ BreadthFirstSearchRecursive(queue, list){ //[tree.root], []
 function DFSPreOrder(node, list){ //parent -> left -> right
   	list.push(node.value)
   	if(node.left) {
-    	traversePreOrder(node.left, list)
+    	    traversePreOrder(node.left, list)
   	}
   	if(node.right) {
-    	traversePreOrder(node.right, list)
+    	    traversePreOrder(node.right, list)
   	}
   	return list
 }
 
 function DFSInOrder(node, list){ //left -> parent -> right
   	if(node.left) {
-    	traverseInOrder(node.left, list)
+    	    traverseInOrder(node.left, list)
   	}
   	list.push(node.value)
   	if(node.right) {
-    	traverseInOrder(node.right, list)
+    	    traverseInOrder(node.right, list)
   	}
   	return list
 }
 
 function DFSPostOrder(node, list){ //left -> right -> parent
   	if(node.left) {
-    	traversePostOrder(node.left, list)
+    	    traversePostOrder(node.left, list)
   	}
   	if(node.right) {
-    	traversePostOrder(node.right, list)
+    	    traversePostOrder(node.right, list)
   	}
   	list.push(node.value)
   	return list
@@ -1219,14 +1219,14 @@ Think about DP: divide and conquer/recursive/memorization/repetitive subproblems
 function memoizeAddTo80(n){ 
   	let cache = {} 
   	return function(n){ //closure: access to an outer function’s scope from an inner function
-    	if(n in cache){ //use variable declared in the parent function
-      		return cache[n]
-    	}else{
-      		console.log('long time')
-      		const answer = n + 80
-      		cache[n] = answer
-      		return answer
-    	}
+		if(n in cache){ //use variable declared in the parent function
+			return cache[n]
+		}else{
+			console.log('long time')
+			const answer = n + 80
+			cache[n] = answer
+			return answer
+		}
   	}
 }
 ```
@@ -1234,7 +1234,7 @@ closure example: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closure
 ```
 function makeAdder(x) { //function factory
   	return function(y) {
-    	return x + y
+    		return x + y
   	}
 }
 var add5 = makeAdder(5)
@@ -1251,10 +1251,10 @@ function fibonacciMaster(){ //O(n), top-down
             return cache[n]
         }else{
         	if(n < 2){
-            	return n
+            		return n
         	}else{
-            	cache[n] = fib(n-1) + fib(n-2)
-            	return cache[n]
+            		cache[n] = fib(n-1) + fib(n-2)
+            		return cache[n]
         	}
     	}
     }
