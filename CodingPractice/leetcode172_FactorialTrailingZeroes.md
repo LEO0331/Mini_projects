@@ -5,7 +5,7 @@ Number
 # Solution
 Tailing 0 is from 2 times 5 and we know that 2 is much more than 5, so the question is converted to count how many 5 in this number -> time: O(log(n)), space: O(1)
 ```
-/**
+/*
  * @param {number} n
  * @return {number}
  */
