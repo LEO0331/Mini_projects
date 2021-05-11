@@ -37,7 +37,7 @@ var climbStairs = function(n) {
     for (let i = 2; i <= n; i++){
     	answer.push(answer[i-2]+answer[i-1])
     }
-    return answer.pop() //answer[n-1]
+    return answer.pop() //answer[n]
     /*
     let cache = {}
     function helper(n){ 
