@@ -15,9 +15,17 @@ var reverseString = function(s) {
         s[i] = s[s.length-1-i]
         s[s.length-1-i] = temp
     }
-    /*
+    /* Iteration 
     for (let [a, b] = [0, s.length - 1]; a < b; a++, b--) {
         [s[a], s[b]] = [s[b], s[a]]
+    }
+    */
+    /* Recursion 
+    reverse(0, s.length - 1)
+    function reverse(i, j) {
+        if (i >= j) return
+        [s[i], s[j]] = [s[j], s[i]]
+        reverse(i + 1, j - 1)
     }
     */
 };
