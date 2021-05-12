@@ -25,7 +25,26 @@ var inorderTraversal = function(root) {
     return left.concat([root.val]).concat(right)
 };
 ```
-2. use stack to implement iteration
+2. use stack to store the order of nodes to implement iteration 
 ```
-
+var inorderTraversal = function(root) {
+    if (!root) return []
+    const stack = [root] //push nodes
+    const ans = [] 
+    let left = root.left
+    let item = null // stack.pop()
+    while (left) {
+        stack.push(left)
+        left = left.left
+    }
+    while ((item = stack.pop())) {
+        ans.push(item.val)
+        let t = item.right
+        while (t) {
+            stack.push(t)
+            t = t.left
+        }
+    }
+    return ans
+};
 ```
