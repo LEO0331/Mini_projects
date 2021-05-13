@@ -37,7 +37,7 @@ var reverseBits = function(n) {
 2. concept of two pointers: left-shift answer & right-shift original number -> time: O(log(n)), space: O(1)
 - n & 1 === 1: last digit of n is 1
 - n & 1 === 0: last digit of n is 0
-- >>>: Bitwise unsigned right shift operator -> convert any numeric expression to an "integer" or non-numeric expression to zero; shift the right-most bits of a number a specified number of times, and padding with zeroes to the left
+- Bitwise unsigned right shift operator -> convert any numeric expression to an "integer" or non-numeric expression to zero; shift the right-most bits of a number a specified number of times, and padding with zeroes to the left
 ```
 var reverseBits = function(n) {
     let res = 0
