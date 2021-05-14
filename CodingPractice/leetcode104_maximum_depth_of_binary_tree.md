@@ -56,7 +56,7 @@ var maxDepth = function(root){
         let r = 1
         if(node.left) l += findNode(node.left)
         if(node.right) r += findNode(node.right)
-        return l > r ? l : r
+        return l > r ? l : r //Math.max(l, r)
     }
 }
 ```
