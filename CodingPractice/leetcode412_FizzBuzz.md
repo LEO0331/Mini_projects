@@ -7,7 +7,7 @@ Given an integer n, return a string array answer (1-indexed) where:
 # Concept
 Array
 # Solution
-Push corresponding values to the array based on the description followed by index or use map() to simplify
+Push the corresponding value to the array based on the description followed by index or use map() to simplify
 ```
 /*
  * @param {number} n
@@ -24,10 +24,10 @@ var fizzBuzz = function(n) {
     return answer
     /*
     for(let i=1; i<=n; i++){
-        if(i%15 === 0) answer[i] = 'FizzBuzz'
+        if(i%15 === 0) answer[i] = 'FizzBuzz' 
         else if(i%3 === 0) answer[i] = 'Fizz'
         else if(i%5 === 0) answer[i] = 'Buzz'
-        else answer[i] = ''+i
+        else answer[i] = '' + i //""
     }
     answer.shift()
     return answer
