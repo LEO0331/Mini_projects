@@ -34,7 +34,8 @@ var invertTree = function(root) {
 ```
 2. use stack to iterate the left and right tree
 ```
-if(!root) return root 
+var invertTree = function(root) {
+    if(!root) return root 
     const stack = [root]
     let current = null
     while((current = stack.shift())) {
@@ -46,4 +47,5 @@ if(!root) return root
         if(right) stack.push(right)
     }
     return root
+};
 ```
