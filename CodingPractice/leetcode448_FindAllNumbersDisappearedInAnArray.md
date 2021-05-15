@@ -33,7 +33,7 @@ var findDisappearedNumbers = function(nums) {
     let arr=[]
     for(let i=0; i<nums.length; i++)
     {
-	      let currentNumber=Math.abs(nums[i]) //go to currentNumber - 1 index and mark it negative 
+	let currentNumber = Math.abs(nums[i]) //go to currentNumber - 1 index and mark it negative 
         if(nums[currentNumber-1] > 0) nums[currentNumber-1] = -nums[currentNumber-1]
     }
     for(let i=0; i<nums.length; i++)
