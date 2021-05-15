@@ -1,5 +1,5 @@
 # Description
-Given an integer x, return true if x is palindrome integer. An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
+Given an integer x, return true if x is palindrome integer. An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not. Constraints: -2^31 <= x <= 2^31 - 1
 ```
 Input: x = -121
 Output: false
@@ -15,7 +15,7 @@ Number
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-    if(x < 0) return false
+    if(x < 0) return false //if(x < 0 || x > Math.pow(2,32)-1) return false
     let n = 0
     let num = x //store original number for later comparison
     while(x > 0){ //x !== 0
