@@ -33,7 +33,7 @@ var generate = function(numRows) {
     return ans
 }; 
 ```
-
+2. construct each row based on the previous row/elements of the array
 ```
 /*
  * @param {number} rowIndex
@@ -54,4 +54,24 @@ var getRow = function(rowIndex) {
     }
     return arr
 };
+var getRow = function(rowIndex) {
+    let arr = [1]
+    for(let i = 1; i <= rowIndex; i++) {
+        for(let j = i; j > 0; j--) {
+            if(j === i) arr[j] = 1 //last element in the row
+            else arr[j] = arr[j - 1] + arr[j] //move forward, add previous index of number
+        } 
+    }
+    return arr
+};
+const getRow = rowIndex => {
+    const arr = []
+    while (arr.length <= rowIndex) {
+        arr.unshift(1) //add one at the head
+        for(let i = 1; i < arr.length - 1; i++) {
+            arr[i] += arr[i + 1] //increment from previous position, added from behind
+        }
+    }
+    return arr
+}
 ```
