@@ -22,9 +22,35 @@ Output: 5, nums = [0,1,4,0,3]
 Explanation: Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4. Note that the order of those five elements can be arbitrary. It doesn't matter what values are set beyond the returned length.
 ```
 # Concept
-Array
+Array, Two Pointers
 # Solution
-
+1. use a slow pointer to record the position of the different value
 ```
-
+/*
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+var removeElement = function(nums, val) {
+    let pointer = 0
+    for(let i=0; i<nums.length; i++){
+        if(nums[i] !== val){
+            //let temp = nums[pointer]
+            nums[pointer++] = nums[i]
+            //nums[i] = temp
+        }
+    }
+    return pointer 
+};
+```
+2. add one to the count number if values are not match and return the last position
+```
+var removeElement = function(nums, val) {
+    //if(nums.length === 0 || nums.indexOf(val) < 0) return nums.length //no value matches
+    let count = 0
+    for(let i = 0, max = nums.length; i < max; i++){
+        if(nums[i] !== val) nums[count++] = nums[i]
+    }
+    return count
+};
 ```
