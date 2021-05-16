@@ -1,9 +1,15 @@
 # Description
-Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+1. Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+2. Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k
+```
+Input: nums = [1,2,3,1], k = 3 Output: true
+Input: nums = [1,0,1,1], k = 1 Output: true
+Input: nums = [1,2,3,1,2,3], k = 2 Output: false
+```
 # Concept
 Array, Hash table
 # Solution
-Create a hash table/map to record elements
+1. create a hash table/map to record visited elements
 ```
 /*
  * @param {number[]} nums
@@ -28,4 +34,8 @@ var containsDuplicate = function(nums) {
     }
     return false
 };
+```
+2. 
+```
+
 ```
