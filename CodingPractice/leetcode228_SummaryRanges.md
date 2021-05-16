@@ -19,9 +19,33 @@ Input: nums = [] Output: []
 Input: nums = [0] Output: ["0"]
 ```
 # Concept
-Array, Hash
+Array, Two Pointers
 # Solution
-
+Two pointers to record each start position and skip missing ones -> time: O(n), space: O(1)
 ```
-
+/*
+ * @param {number[]} nums
+ * @return {string[]}
+ */
+var summaryRanges = function(nums) {
+    /*
+    let ans = []
+    for(let i=0, l=nums[0]; i<nums.length; i++){
+        if(nums[i+1] !== nums[i]+1){
+            ans.push(l === nums[i] ? '' + nums[i] : l + '->' + nums[i])
+            l = nums[i+1]
+        }
+    }
+    return ans
+    */
+    let i = 0, ans = []
+    for (let j = 0; j < nums.length; j++) {
+        if (nums[j+1] !== nums[j] + 1) {
+            if (i === j) ans.push(nums[i] + "") //only one element
+            else ans.push(nums[i] + "->" + nums[j]) //ans.push(i == j ? nums[i] + "" : nums[i] + "->" + nums[j])
+            i = j + 1
+        }
+    }
+    return ans
+};
 ```
