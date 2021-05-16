@@ -136,6 +136,32 @@ function containsCommonItem(arr1, arr2){
 - Middle: splice(start, deleteCount, itemTobeAdded): changes the original array, return the removed items VS slice(start, end): selected from start to end (end not included), original array will NOT be modified(return a shallow copy of a portion of an array) --> O(n)
 - String: convert it to an array --> split() --> https://www.w3schools.com/jsref/jsref_split.asp, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor, https://medium.com/@ashfaqueahsan61/time-complexities-of-common-array-operations-in-javascript-c11a6a65a168
 - In javascript, arrays are objects, so there's no such thing as out of range in javascript arrays. Array indexes are stored as keys. If the index doesn't exists in the array, undefined is returned.
+- JavaScript arrays are collections of items, where each item is accessible through an index. These indexes are non-negative integers, and accessing a negative index will just return undefined -> letters[-1]: undefined
+- Use Proxies to access array items starting from the end using negative indexes
+```
+const proxy = new Proxy(letters, {})
+const proxy = new Proxy(letters, {
+    get(target, prop) {
+        return target[prop]
+    }
+})
+//Example
+const letters = ['a', 'b', 'c', 'd', 'e']
+const proxy = new Proxy(letters, {
+    get(target, prop) {
+        if (!isNaN(prop)) {
+            prop = parseInt(prop, 10)
+            if (prop < 0) {
+                prop += target.length
+            }
+        }
+        return target[prop]
+    }
+})
+proxy[0] => 'a'
+proxy[-1] => 'e'
+proxy[-2] => 'd'
+```
 ```
 class MyArray{
 	constructor(){
