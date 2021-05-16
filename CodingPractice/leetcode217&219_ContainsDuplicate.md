@@ -7,9 +7,9 @@ Input: nums = [1,0,1,1], k = 1 Output: true
 Input: nums = [1,2,3,1,2,3], k = 2 Output: false
 ```
 # Concept
-Array, Hash table
+Array, Hash 
 # Solution
-1. create a hash table/map to record visited elements
+1. create a hash table to record visited elements -> time/space: O(n)
 ```
 /*
  * @param {number[]} nums
@@ -35,7 +35,31 @@ var containsDuplicate = function(nums) {
     return false
 };
 ```
-2. 
+2. create a hash map to record visited elements and compare its abs() with the target -> time/space: O(n)
 ```
-
+/*
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {boolean}
+ */
+var containsNearbyDuplicate = function(nums, k) {
+    const map = new Map()
+    for(let i = 0; i < nums.length; i++){
+        if(map.has(nums[i])){ //if(map.has(nums[i]) && i - map.get(nums[i]) <= k) return true
+            if(Math.abs(map.get(nums[i]) - i) <= k) return true
+        }
+        map.set(nums[i], i) //reset the visited element
+    }
+    return false
+    /*
+    if(nums.length <= 1) return false
+    const obj = {}
+    for(let i = 0; i < nums.length; i++) {
+        const num = nums[i]
+        if (obj[num] !== undefined && i - obj[num] <= k) return true
+        obj[num] = i
+    }
+    return false
+    */
+};
 ```
