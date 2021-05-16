@@ -26,9 +26,29 @@ var findMaxConsecutiveOnes = function(nums) {
         }
     }
     return Math.max(...max)
+    //return nums.join('').split('0').reduce((max, ones) => Math.max(max, ones.length), 0) -> [11,111]
+    //return Math.max(...nums.join('').split('0').map(ones => ones.length)) -> [1,11,1]
+    //return Math.max(...(nums.join('').match(/1+/g) || ['']).map(ones => ones.length))
 };
 ```
-2. use one pointer to record the
+2. use one pointer to record the current length of 1 and compare with previous max length
 ```
-
+var findMaxConsecutiveOnes = function(nums) {
+    let count = 0
+    let max = 0
+    for (let i = 0; i < nums.length; i++) {
+        /*
+        if (nums[i] === 1) count++
+        if (nums[i + 1] !== 1 && count > max) max = count
+        if (nums[i] === 0) count = 0 //reset
+        */
+        if (nums[i] === 1){
+            count++
+            max = Math.max(max, count)
+        }else{
+            count = 0
+        }
+    }
+    return max
+}
 ```
