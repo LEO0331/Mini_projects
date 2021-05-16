@@ -7,7 +7,7 @@ Input: nums = [2,2,3,1] Output: 1 Explanation: Note that the third maximum here 
 ```
 # Concept
 Array
-# Description 
+# Solution  
 
 ```
 
