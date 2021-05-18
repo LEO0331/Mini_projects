@@ -15,3 +15,23 @@ Array
 ```
 
 ```
+# Complement
+```
+/*
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var findMaxAverage = function(nums, k) { //Time Limit Exceeded, can not handle large inputs
+    let max = -Infinity 
+    if(k === 1) return Math.max(...(nums)) //maximum element in the arrray
+    for(let i=0; i<nums.length; i++){
+        if(nums[i+k-1]){ //restriction of tail
+            let cur = nums.slice(i,i+k).reduce((a, b) => a + b, 0)/k //calculate each k number sum
+            max = Math.max(max,cur) //compare with current max sum
+        }
+    }
+    return max
+};
+
+```
