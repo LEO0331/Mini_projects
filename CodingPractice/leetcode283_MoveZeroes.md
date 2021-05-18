@@ -1,9 +1,7 @@
 # Description
 Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements in-place without making a copy of the array.
-
 # Concept
 Array, Two Pointers
-
 # Solution
 Use slow and fast pointers to record the position of zero and swap
 ```
