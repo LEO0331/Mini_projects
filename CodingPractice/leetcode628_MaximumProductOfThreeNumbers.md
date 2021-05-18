@@ -16,7 +16,7 @@ var maximumProduct = function(nums) {
     return Math.max(p,n)
 };
 ```
-2. determine smallest two negative numbers and largest three positive numbers
+2. determine smallest two negative numbers and largest three positive numbers -> time: O(n), space: O(1)
 ```
 var maximumProduct = function(nums) {
     let max1, max2, max3, min1, min2
