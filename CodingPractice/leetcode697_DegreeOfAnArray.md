@@ -7,7 +7,7 @@ Input: nums = [1,2,2,3,1,4,2] Output: 6 Explanation: The degree is 3 because the
 # Concept
 Array, Hash
 # Solution
-1. use two hash map to record the most elements and their first appearance 
+1. use two hash maps to record the most appearance elements and their first appearance 
 ```
 /*
  * @param {number[]} nums
