@@ -7,7 +7,39 @@ Input: nums = [2,2,2,2,2] Output: 1 Explanation: The longest continuous increasi
 # Concept
 Array
 # Solution
-
+Record the max length after comparing the current and previous number
 ```
-
+/*
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findLengthOfLCIS = function(nums) {
+    let count = 1
+    let max = 1
+    let pointer = nums[0]
+    for(let i=1; i<nums.length; i++){
+        if(nums[i] > pointer){
+            count++
+            pointer = nums[i]
+            max = Math.max(max, count)
+        }else{
+            count = 1
+            pointer = nums[i]
+        }
+    }
+    return max
+};
+var findLengthOfLCIS = function(nums) {
+    let count = 1
+    let max = 1
+    for(let i=1; i<nums.length; i++){
+        if(nums[i] > nums[i-1]){
+            count++
+            max = Math.max(max, count)
+        }else{
+            count = 1
+        }
+    }
+    return max
+};
 ```
