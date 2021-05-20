@@ -34,35 +34,35 @@ var minCostClimbingStairs = function(cost) {
     return minCosts[minCosts.length - 1] //minCosts.pop()
     /*
     cost.push(0) //last index is the end of the floor with no more stair to climb up and add
-	  let dp = [cost[0], cost[1]]
-	  for (let i = 2; i < cost.length; i++) {
-		  dp[i] = Math.min(dp[i - 1], dp[i - 2]) + cost[i]
-	  }
-	  return dp[dp.length - 1] //dp.pop()
+	let dp = [cost[0], cost[1]]
+	for (let i = 2; i < cost.length; i++) {
+	    dp[i] = Math.min(dp[i - 1], dp[i - 2]) + cost[i]
+	}
+	return dp[dp.length - 1] //dp.pop()
     */
 };
 ```
 3. recursion with cache
 ```
 var minCostClimbingStairs = function (cost) {
-	  let cache = []
-	  let helper = (cost, index) => {
-		    if (index < 0) return 0
-		    if (index < 2) return cost[index] //base
-		    if (cache[index]) return cache[index]
-		    cache[index] = Math.min(helper(cost, index - 1), helper(cost, index - 2)) + cost[index]
-		    return cache[index]
-	  };
-	  cost.push(0)
-	  return helper(cost, cost.length - 1)
+    let cache = []
+    let helper = (cost, index) => {
+	if (index < 0) return 0
+	if (index < 2) return cost[index] //base
+	if (cache[index]) return cache[index]
+	cache[index] = Math.min(helper(cost, index - 1), helper(cost, index - 2)) + cost[index]
+	return cache[index]
+    }
+    cost.push(0)
+    return helper(cost, cost.length - 1)   
     /* Recursion without cache: Time Limit Exceeded
     let helper = (cost, index) => {
-		    if (index < 0) return 0
-		    if (index < 2) return cost[index]
-		    return Math.min(helper(cost, index - 1), helper(cost, index - 2)) + cost[index]  
-	  }
-	  cost.push(0)
-	  return helper(cost, cost.length - 1)
+	if (index < 0) return 0
+	if (index < 2) return cost[index]
+	return Math.min(helper(cost, index - 1), helper(cost, index - 2)) + cost[index]  
+    }
+    cost.push(0)
+    return helper(cost, cost.length - 1)
     */
 };
 ```
