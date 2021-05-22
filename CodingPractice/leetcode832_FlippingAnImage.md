@@ -8,9 +8,30 @@ Input: image = [[1,1,0],[1,0,1],[0,0,0]] Output: [[1,0,0],[0,1,0],[1,1,1]] Expla
 Input: image = [[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]] Output: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]] Explanation: First reverse each row: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]]. Then invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
 ```
 # Concept
-2-d Array
+2-d Array, Map
 # Solution
-
+Reverse the value in-place or by inbuilt function and conduct bitwise operation to flip the value
 ```
-
+/*
+ * @param {number[][]} image
+ * @return {number[][]}
+ */
+var flipAndInvertImage = function(image) {
+    for(let i=0; i<image.length; i++){
+        for(let j=0; j<image[i].length/2; j++){
+            let temp = image[i][j]
+            image[i][j] = image[i][image[i].length-1-j] ^ 1 //return 1 if the bits are different
+            image[i][image[i].length-1-j] = temp ^ 1
+        }
+    }
+    return image
+    /*
+    for(let row in image) {
+			  image[row] = image[row].reverse()
+			  image[row] = image[row].map(x => 1 - x)
+		}
+	  return A
+    */
+    //return image.map(a => {return a.reverse().map(b => b^1)})
+};
 ```
