@@ -10,7 +10,23 @@ Input: nums = [1,1,1] Output: true
 # Concept
 Array
 # Solution
-
+Use two indicators to record the increase/decrease of the number
 ```
-
+/*
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var isMonotonic = function(nums) {
+    let increase = true, decrease = true
+    for(let i=0; i<nums.length; i++){
+        if(nums[i] < nums[i+1]) decrease = false
+        else if(nums[i] > nums[i+1]) increase = false
+        else if(nums[i] === nums[i+1]) continue
+        /*
+        if(nums[i] < nums[i+1]) decrease = false
+        if(nums[i] > nums[i+1]) increase = false
+        */
+    }
+    return increase || decrease
+};
 ```
