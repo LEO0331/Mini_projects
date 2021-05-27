@@ -45,7 +45,70 @@ var sortArrayByParity = function(nums) {
     return nums
 };
 ```
-
+2-1. two pointers record odd/even position and push to another array -> time/space: O(n)
 ```
-
+/*
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortArrayByParityII = function(nums) {
+    let odd = 1
+    let even = 0
+    let arr = []
+    for(let i=0; i<nums.length; i++){
+        if(nums[i]%2 === 0){
+            arr[even] = nums[i]
+            even += 2
+        }else{
+            arr[odd] = nums[i]
+            odd += 2
+        }
+    }
+    return arr
+    /*
+    let res = new Array(A.length)
+    for(let i = 0, even = 0, odd = 1; i < nums.length; i++) {
+        if(nums[i]%2 === 0){
+            res[even] = nums[i]
+            even += 2
+        }else{
+            res[odd] = nums[i]
+            odd += 2
+        }
+    }
+    return res
+    */
+};
+```
+2-2 filter all odd/even elements and push them into an array -> time/space: O(n)
+```
+var sortArrayByParityII = function(nums) {
+    let odd = nums.filter(i => i % 2 === 0)
+    let even = numsfilter(i => i % 2 !== 0)
+    let arr = []
+    for(let i=0; i<nums.length/2; i++){
+        arr.push(odd[i], even[i])
+    }
+    return arr
+};
+```
+2-3 two pointers with in-place swap -> time: O(n), space: O(1)
+```
+var sortArrayByParityII = function(nums) {
+    let oddpointer = 1
+    const swap = (i, j) => {
+        let temp = nums[i]
+        nums[i] = nums[j]
+        nums[j] = temp
+    }
+    for(let i=0; i<nums.length; i+=2){
+        if(nums[i] & 1) {
+            while(nums[oddpointer] & 1){
+                oddpointer += 2
+            }
+            swap(i, oddpointer)
+        }
+    }
+    return nums
+};
 ```
