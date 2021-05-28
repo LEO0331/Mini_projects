@@ -11,7 +11,29 @@ After adding 2 to nums[3], the array is [-2,-1,3,6], and the sum of even values 
 # Concept
 Array
 # Solution
-
+Add values to corresponding positions, filter the even number and push them in new array or in-place swap
 ```
-
+/*
+ * @param {number[]} nums
+ * @param {number[][]} queries
+ * @return {number[]}
+ */
+var sumEvenAfterQueries = function(nums, queries) {
+    let res = []
+    for(let i=0; i<queries.length; i++){
+        let a = queries[i][0]
+        let b = queries[i][1]
+        nums[b] += a
+        let arr = nums.filter(num => num%2 === 0)
+        let r = arr.reduce((a, b) => a + b, 0)
+        res.push(r)
+    }
+    return res
+    /* in-place replaces the query function
+    return queries.map(query => {
+        nums[query[1]] += query[0]
+        return nums.reduce((acc, cur) => cur % 2 ? acc : acc+cur, 0)
+    })
+    */
+};
 ```
