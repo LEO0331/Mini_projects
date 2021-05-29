@@ -9,7 +9,24 @@ Input: num = [9,9,9,9,9,9,9,9,9,9], k = 1 Output: [1,0,0,0,0,0,0,0,0,0,0] Explan
 # Concept
 Array
 # Solution
-
+Add current element to the k value and assign the reminder as new value, looping through by diviiding 10 OR use BigInt(string/number)
 ```
-
+/*
+ * @param {number[]} num
+ * @param {number} k
+ * @return {number[]}
+ */
+var addToArrayForm = function(num, k) {
+    let right = num.length - 1
+    while(k){ // k as a carry
+        if(right < 0) num.unshift(k % 10) //k longer than num.length
+        else{
+            k += num[right]
+            num[right--] = k % 10
+        }
+        k = Math.floor(k/10)
+    }
+    return num
+    //return [...(BigInt(num.join('')) + BigInt(k) + '')]
+};
 ```
