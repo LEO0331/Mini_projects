@@ -5,8 +5,21 @@ Input: [1,0,2,3,0,4,5,0] Output: null Explanation: After calling your function, 
 Input: [1,2,3] Output: null Explanation: After calling your function, the input array is modified to: [1,2,3]
 ```
 # Concept
-Array
+Array, Splice
 # Solution
+Add a zero by splice() in current 0 position and remove the last element of the array 
 ```
-
+/*
+ * @param {number[]} arr
+ * @return {void} Do not return anything, modify arr in-place instead.
+ */
+var duplicateZeros = function(arr) {
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] === 0){
+            arr.splice(i, 0, 0) //arr.splice(arr.indexOf(0, i), 0, 0)
+            arr.pop() //remove the last element
+            i++
+        }
+    }
+};
 ```
