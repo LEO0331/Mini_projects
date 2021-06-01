@@ -4,7 +4,7 @@ Given two arrays arr1 and arr2, the elements of arr2 are distinct, and all eleme
 Input: arr1 = [2,3,1,3,2,4,6,7,9,2,19], arr2 = [2,1,4,3,9,6] Output: [2,2,2,1,4,3,3,9,6,7,19]
 ```
 # Concept
-Array
+Array, Map, Filter, Concat
 # Solution
 1. push all same elements in another array, filter the non-common one to with sortation and concat at the end
 ```
@@ -27,9 +27,16 @@ var relativeSortArray = function(arr1, arr2) {
     return res.concat(arr1.sort((a, b) => a - b))
 };
 ```
-
+2. map arr2 and sort arr1 with custom comparator
 ```
 var relativeSortArray = function(arr1, arr2) {
-    
+    const map = new Map()
+    arr2.forEach((a, idx) => map.set(a, idx))
+    const l = arr2.length
+    return arr1.sort((a, b) => { 
+        a = map.has(a) ? map.get(a) : l + a
+        b = map.has(b) ? map.get(b) : l + b
+        return a - b //ascending order
+    })
 };
 ```
