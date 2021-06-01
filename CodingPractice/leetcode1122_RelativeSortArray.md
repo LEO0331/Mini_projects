@@ -6,7 +6,30 @@ Input: arr1 = [2,3,1,3,2,4,6,7,9,2,19], arr2 = [2,1,4,3,9,6] Output: [2,2,2,1,4,
 # Concept
 Array
 # Solution
-
+1. push all same elements in another array, filter the non-common one to with sortation and concat at the end
+```
+/*
+ * @param {number[]} arr1
+ * @param {number[]} arr2
+ * @return {number[]}
+ */
+var relativeSortArray = function(arr1, arr2) {
+    /*
+    let arr = []
+    arr2.forEach((a, idx) => {arr.push(...arr1.filter(n => n === a))})
+    return [...arr, ...arr1.filter(a => !arr2.includes(a)).sort((b,c) => b-c)]
+    */
+    let res = []
+    for (let i = 0; i < arr2.length; i++) {
+        res = res.concat(arr1.filter(j => j === arr2[i])) //find all matching numbers in arr1 
+        arr1 = arr1.filter(j => j !== arr2[i]) //remove non-common numbers 
+    }
+    return res.concat(arr1.sort((a, b) => a - b))
+};
 ```
 
+```
+var relativeSortArray = function(arr1, arr2) {
+    
+};
 ```
