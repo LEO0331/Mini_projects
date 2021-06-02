@@ -66,12 +66,12 @@ var wordPattern = function(pattern, s) {
     let m = {}
     let n = {}
     s = s.split(/\s/)
-    if(pattern.length != s.split(/\s/).length) return false
-    for(let i in pattern){
-        if(!patternMap[pattern[i]]) patternMap[pattern[i]] = s[i]
-        else if(patternMap[pattern[i]] != s[i]) return false
-        if(!strMap[s[i]]) strMap[s[i]] = pattern[i]
-        else if(strMap[s[i]] != pattern[i]) return false
+    if(pattern.length != s.length) return false
+    for(let i in pattern){ //for...in should not be used to iterate over an Array where the index order is important
+        if(!m[pattern[i]]) m[pattern[i]] = s[i]
+        else if(m[pattern[i]] != s[i]) return false
+        if(!n[s[i]]) n[s[i]] = pattern[i]
+        else if(n[s[i]] != pattern[i]) return false
     }
     return true
     */
