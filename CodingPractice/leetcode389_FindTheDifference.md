@@ -9,7 +9,7 @@ Input: s = "ae", t = "aea" Output: "a"
 # Concept
 Hash, Map, Bitwise
 # Solution
-1. two maps compare each key-value or one map to che
+1. two maps compare each key-value or one map to check the numbers of values by deductions 
 ```
 /*
  * @param {string} s
@@ -34,7 +34,7 @@ var findTheDifference = function(s, t) {
     for(c of t){
         if (!map.has(c)) return c //if added char is not part of the map
         else map.set(c, map.get(c)-1)
-        if (map.get(c) < 0) return c //if added char is part of the map but value is -1
+        if (map.get(c) < 0) return c //<= -1, if added char is part of the map but value is -1
     }
     */
 };
