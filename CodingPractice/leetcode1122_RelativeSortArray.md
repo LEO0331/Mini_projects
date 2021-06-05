@@ -4,7 +4,7 @@ Given two arrays arr1 and arr2, the elements of arr2 are distinct, and all eleme
 Input: arr1 = [2,3,1,3,2,4,6,7,9,2,19], arr2 = [2,1,4,3,9,6] Output: [2,2,2,1,4,3,3,9,6,7,19]
 ```
 # Concept
-Array, Map, Filter, Concat
+Array, Map, Filter, Concat, Sort()
 # Solution
 1. push all same elements in another array, filter the non-common one to with sortation and concat at the end
 ```
