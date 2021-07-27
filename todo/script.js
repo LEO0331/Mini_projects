@@ -29,6 +29,6 @@ list.addEventListener("click", e => { //delete
 	return
     }
     let num = e.target.getAttribute("data-num")
-    data.splice(num,1)
+    data.splice(num,1) //let newData = data.splice(0,num).concat(data.splice(num+1))
     renderData()
 })
