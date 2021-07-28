@@ -291,7 +291,7 @@ class HashTable {
     _hash(key) {
         let hash = 0;
         for (let i = 0; i < key.length; i++){ //fit inside the bucket
-            hash = (hash + key.charCodeAt(i) * i) % this.data.length
+            hash = (hash + key.charCodeAt(i) * i) % this.data.length //charCodeAt: A->65 a->97
     	}
         return hash;
     }
