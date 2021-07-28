@@ -5,9 +5,47 @@ Input: nums = [1,2,2,4] Output: [2,3]
 Input: nums = [1,1] Output: [1,2]
 ```
 # Concept
-Hash, Swap
+Hash, Object
 # Solution
-
+1. use hash table to record existing number and find the missing one
 ```
-
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var findErrorNums = function(nums) {
+    let map = new Map()
+    let len = nums.length
+    let sum = (len*(len+1))/2
+    let s = 0, a = 0 //Supplement calculation
+    for(let i=0; i<len; i++){
+        if(map.has(nums[i])) a = nums[i]
+        else{
+            map.set(nums[i], true) //nums[i]
+            s+=nums[i]
+        }
+    }
+    return [a, sum - s]
+};
+```
+2. use Object to record existing number and find the missing one
+```
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var findErrorNums = function(nums) {
+    let obj = {}
+    let len = nums.length
+    let sum = (len*(len+1))/2
+    let s = 0, a = 0 
+    for(let i of nums){
+        if(obj[i]) a = i
+        else{
+            obj[i] = true //i
+            s+=i
+        }
+    }
+    return [a, sum - s]
+};
 ```
