@@ -1,0 +1,29 @@
+body::before { /* stick on the top when rolling */
+    display: block;
+    content: '';
+    height: 60px;
+}
+.bg-img{
+    position: relative;
+    background: url('https://i.ibb.co/1RS1dqC/section-b.jpg') no-repeat bottom center/cover;
+    height: 500px;
+    /*opacity: 0.5;*/
+}
+.filter{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.section-c img,
+.section-c a {
+  width: 100%;
+  height: 100%;
+}
+
+.fab {
+    color: black;
+}
