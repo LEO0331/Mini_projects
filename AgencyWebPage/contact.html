@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- mapBox -->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Agency</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Agency</div>
+      <div class="toggle"></div>
+      <div class="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-bar">
+          <ul>
+            <li>
+              <a href="https://facebook.com">
+                <img src="images/facebook.png" target="_blank" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com">
+                <img src="images/twitter.png" target="_blank" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com">
+                <img src="images/instagram.png" target="_blank" alt="" />
+              </a>
+            </li>
+          </ul>
+          <a href="mailto:you@email.com" class="email-icon">
+            <img src="images/email.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="title">
+        <h1>Contact us</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
+          iusto molestias accusamus rem nobis est, et laborum harum doloremque
+          nemo non, minima quos totam labore
+        </p>
+      </div>
+      <div class="contact">
+        <div class="contact-form">
+          <form>
+            <div class="row">
+              <div class="input50">
+                <input type="text" placeholder="First Name" />
+              </div>
+              <div class="input50">
+                <input type="text" placeholder="Last Name" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="input50">
+                <input type="text" placeholder="Email" />
+              </div>
+              <div class="input50">
+                <input type="text" placeholder="Subject" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="input100">
+                <textarea placeholder="Message"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input100">
+                <input type="submit" value="Send" />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-box">
+            <img src="images/address.png" class="contact-icon" alt="" />
+            <div class="details">
+              <h4>Address</h4>
+              <p>ADELAIDE 5000 SA AUS</p>
+            </div>
+            <div id="map"></div>
+          </div>
+          <div class="info-box">
+            <img src="images/email.png" class="contact-icon" alt="" />
+            <div class="details">
+              <h4>Email</h4>
+              <a href="person@example.com">person@example.com</a>
+              <a href="work@example.com">work@example.com</a>
+            </div>
+          </div>
+          <div class="info-box">
+            <img src="images/call.png" class="contact-icon" alt="" />
+            <div class="details">
+              <h4>Call</h4>
+              <a href="tel:+61 123456789">+61 123456789</a>
+              <a href="tel:+61 987654321">+61 987654321</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- mapBox -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+    <script>
+      mapboxgl.accessToken =
+        'pk.eyJ1IjoibGVvY2hlbjAzMzEiLCJhIjoiY2tzdjZ4M3Q3MW5sODJucWtoeTJidHAycyJ9.SfAkbuYxfi_9aLhZU-jYbQ'
+      var map = new mapboxgl.Map({ //https://docs.mapbox.com/mapbox-gl-js/api/map/#map-parameters
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [138.599503, -34.921230], // starting position [lng, lat]
+        zoom: 14,
+      })
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
