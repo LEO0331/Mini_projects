@@ -1,11 +1,11 @@
 body {
-	font: 'Raleway', sans-serif;
+    font: 'Raleway', sans-serif;
     color: rgba(0,0,0,.5);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: .5em;
     top: 15%;
-	background: linear-gradient(to right, green , red); /* Standard syntax (direction - start - end)*/
+    background: linear-gradient(to right, green , red); /* Standard syntax (direction - start - end)*/
 }
 
 h1 {
