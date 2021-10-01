@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root{
+    --background-color: #fff;
+    --border-color: #d1dffc;
+    --btn-color: #111a2c;
+    --link-color: #395bac;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--border-color);
+    color: #141c2c;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.container {
+    background-color: var(--background-color);
+    border-radius: 4px;
+    border: 20px solid var(--border-color);
+    width: 1000px;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+    display: flex;
+}
+
+form {
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    flex: 1;
+}
+
+.form-control {
+    margin: 10px 0;
+    width: 100%;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input:not([type="checkbox"]) {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.checkbox-container a {
+    margin-left: auto;
+}
+
+.checkbox-container label {
+    color: #9699a3;
+    font-weight: normal;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: var(--btn-color);
+    border: 2px solid var(--btn-color);
+    border-radius: 3px;
+    color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--btn-color);
+}
+
+.btn img {
+    margin-right: 5px;
+    width: 30px;
+}
+
+.features {
+    flex: 1.5;
+    padding: 40px;
+}
+
+.feature {
+    position: relative;
+    padding-left: 30px;
+    margin: 40px 0;
+}
+
+.feature i {
+    color: var(--link-color);
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+
+.feature h3 {
+    margin: 0;
+}
+
+.feature p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 5px 0;
+}
+
+@media(max-width: 768px) { /*992*/
+    .container {
+        flex-direction: column;
+    }
+    form {
+        border-right: 0;
+    }
+}
