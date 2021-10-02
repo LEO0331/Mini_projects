@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AdsManager</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"/>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="user">
+                <i class="fas fa-user"></i>UI Design
+            </div>
+    
+            <div class="search-area">
+                <div class="search">
+                    <form>
+                        <input type="text" placeholder="Search" name="search" />
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="filter">
+                    <button type="submit">Filter</button>
+                </div>
+            </div>
+    
+            <table>
+                <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>Clicks</th>
+                    <th>Priority</th>
+                    <th>Impressions</th>
+                    <th>Deletion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="priority-200">
+                        <td>headphones</td>
+                        <td>500</td>
+                        <td><i class="fas fa-circle"></i>100</td>
+                        <td>100</td>
+                        <td>
+                            <button class="delete"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="priority-600">
+                        <td>IPhone solution</td>
+                        <td>600</td>
+                        <td><i class="fas fa-circle"></i>500</td>
+                        <td>400</td>
+                        <td>
+                            <button class="delete"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="priority-300">
+                        <td>Audio connection</td>
+                        <td>500</td>
+                        <td><i class="fas fa-circle"></i>300</td>
+                        <td>350</td>
+                        <td>
+                            <button class="delete"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="priority-200">
+                        <td>Memory</td>
+                        <td>450</td>
+                        <td><i class="fas fa-circle"></i>200</td>
+                        <td>150</td>
+                        <td>
+                            <button class="delete"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="priority-300">
+                        <td>Cables</td>
+                        <td>150</td>
+                        <td><i class="fas fa-circle"></i>300</td>
+                        <td>250</td>
+                        <td>
+                            <button class="delete"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="add-btn">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </body>
+</html>
