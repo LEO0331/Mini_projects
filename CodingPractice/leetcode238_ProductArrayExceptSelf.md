@@ -5,9 +5,9 @@ Input: nums = [1,2,3,4] Output: [24,12,8,6]
 Input: nums = [-1,1,0,-3,3] Output: [0,0,9,0,0]
 ```
 # Concept
-Array
+Array, Prefix Sum
 # Solution
-Maintain two arrays, get the product of prefix and suffix of current num
+Maintain two arrays and get the product of prefix and suffix of current num
 ```
 /**
  * @param {number[]} nums
